@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #FFFBF7;
+    color: #133E68;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FDF1E6;
+}
+::-webkit-scrollbar-thumb {
+  background: #EE7B30;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #133E68;
+}
+
+/* Architectural crop bracket accent */
+.bracket-accent {
+  position: relative;
+  display: inline-block;
+  padding: 0 0.35em;
+}
+.bracket-accent::before {
+  content: '[';
+  color: #133E68;
+  font-weight: 800;
+  margin-right: 2px;
+}
+.bracket-accent::after {
+  content: ']';
+  color: #133E68;
+  font-weight: 800;
+  margin-left: 2px;
+}
+
+/* 100% Seamless Marquee Keyframes */
+@keyframes marqueeLoop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.animate-marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  white-space: nowrap;
+  animation: marqueeLoop 25s linear infinite;
+  will-change: transform;
+}
+
+.marquee-container:hover .animate-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Subtle float for Fausti */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}

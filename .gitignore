@@ -1,0 +1,46 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Editor directories and system files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary, test and scratch files
+*.tmp
+*.temp
+screenshot*.png
+crop_*.png
+test_*.png
+verify_*.png
+mobile_*.png
+filters_*.png
+schedule_*.png
+slice*.png
+eval.js
+
+# Raw design mockups and heavy dumps (Figma exports, PDFs, extracted base64)
+/EstadoActualLanding.svg
+/EstadoActualLanding.pdf
+/EstadoActualLanding.png
+/extracted_assets/
+/Assets/
