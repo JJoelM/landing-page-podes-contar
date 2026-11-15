@@ -454,107 +454,101 @@ export default function InteractiveSchedule({ onOpenInscription }) {
 
           </div>
 
-          {/* Right Box: Full Activity Detail Card */}
-          <div className="lg:col-span-7 bg-[#FFF5E3] text-[#193764] rounded-[36px] p-6 sm:p-8 border border-orange-200/80 shadow-xl relative overflow-hidden flex flex-col justify-between min-h-[440px]">
-            
-            {/* Imagen del disertante a la IZQUIERDA pegada al borde izquierdo y recortada abajo (z-20 para tapar el fondo del título que va detrás) */}
-            <div className="absolute left-0 bottom-0 w-44 sm:w-56 md:w-64 h-[75%] sm:h-[85%] pointer-events-none z-20 hidden sm:block">
-              {/* Assets/degradado 3 10.png detrás de ella por ser fondo claro, desbordando suavemente */}
-              <div className="absolute -left-14 -bottom-14 w-80 h-80 pointer-events-none z-0 opacity-75 mix-blend-multiply">
-                <img
-                  src="/assets/degradado-claro.png"
-                  alt=""
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <img
-                src={activeActivity.image || '/assets/sofia-calvoe.png'}
-                alt={activeActivity.speaker}
-                className="w-full h-full object-contain object-left-bottom drop-shadow-xl relative z-10"
-              />
-            </div>
+          {/* Right Box: Full Activity Detail Card (1:1 con Detalle Evento.svg) */}
+          <div className="lg:col-span-7 bg-[#FFF5E3] text-[#193764] rounded-[50px] p-6 sm:p-9 shadow-[0_5px_20px_rgba(0,0,0,0.25)] relative overflow-hidden flex flex-col justify-between min-h-[430px]">
 
-            {/* A la DERECHA: Textos y descripciones */}
-            <div className="z-20 sm:ml-auto w-full sm:w-[58%] lg:w-[58%] space-y-4 text-left">
-              
-              {/* Badge & Category Row */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <CategoryIcon
-                    type={activeActivity.category}
-                    variant="card"
-                    className="w-6 h-6 shrink-0"
-                    color={categoryColors[activeActivity.category] || '#F8CBB8'}
-                  />
-                  <span className="font-black text-sm text-[#193764]">
-                    {activeActivity.categoryLabel}
-                  </span>
-                </div>
-                {activeActivity.isStarred && (
-                  <span className="text-[#F38739] font-black text-sm tracking-wide">
-                    ¡Invitada estrella!
-                  </span>
-                )}
-              </div>
-
-              {/* Título del evento con INCLINACIÓN DE -5 GRADOS y fondo que continúa a la izquierda desapareciendo detrás del disertante */}
-              <div className="relative inline-block transform -rotate-[5deg] origin-left my-1 z-10">
-                <div className="absolute inset-y-0 right-0 -left-[600px] bg-[#0660AE] rounded-r-2xl shadow-md -z-10" />
-                <span className="relative z-10 block text-[#FFF5E3] text-xl sm:text-2xl font-black py-2 pl-3 pr-6">
-                  “{activeActivity.title}”
-                </span>
-              </div>
-
-              <p className="text-base sm:text-lg font-black text-[#193764] leading-snug">
-                {activeActivity.subtitle}
-              </p>
-
-              <p className="text-xs sm:text-sm text-[#193764]/85 font-medium leading-relaxed">
-                {activeActivity.description}
-              </p>
-
-              <div className="pt-2 flex flex-wrap gap-y-2 gap-x-6 text-sm">
-                <div>
-                  <span className="block text-xs font-semibold text-[#193764]/65">Disertante:</span>
-                  <span className="font-black text-base text-[#193764]">{activeActivity.speaker}</span>
-                </div>
-                <div>
-                  <span className="block text-xs font-semibold text-[#193764]/65">Lugar:</span>
-                  <span className="font-black text-base text-[#193764] flex items-center gap-1">
-                    <MapPin className="w-3.5 h-3.5 text-[#F38739]" />
-                    {activeActivity.location}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Sombreado en el borde inferior según especificaciones de Figma */}
+            {/* Suave degradado naranja detrás del disertante (izquierda) */}
             <div
-              className="pointer-events-none absolute inset-x-0 bottom-0 h-[281px] rounded-b-[36px] z-10"
+              className="pointer-events-none absolute left-0 top-0 bottom-0 w-72 rounded-l-[50px] z-0"
               style={{
-                background: 'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 56%, #FFF5E3 70%, rgba(2, 40, 72, 0.5) 100%)',
-                mixBlendMode: 'multiply',
+                background: 'radial-gradient(circle at 22% 55%, rgba(243, 135, 57, 0.32) 0%, rgba(243, 135, 57, 0.12) 48%, rgba(255, 245, 227, 0) 78%)',
               }}
               aria-hidden="true"
             />
 
-            {/* Abajo a la derecha FIXED: Botón encima de fecha y hora en Nunito Bold 32 color FFF5E3 */}
-            <div className="pt-6 border-t border-orange-200/40 mt-6 flex flex-wrap items-end justify-between gap-4 z-20">
-              <div className="flex items-center gap-2 text-[#FFF5E3] font-extrabold text-sm sm:text-base mb-1">
-                <Clock className="w-4 sm:w-5 h-4 sm:h-5 text-[#F38739]" />
-                <span>{activeDayObj.weekday} {activeDayObj.dayNum}</span>
+            {/* Top Row: Categoría a la izquierda + badge a la derecha */}
+            <div className="relative z-30 flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2.5">
+                <CategoryIcon
+                  type={activeActivity.category}
+                  variant="card"
+                  className="w-7 h-7 shrink-0"
+                  color="#F38739"
+                />
+                <span className="font-extrabold text-sm sm:text-base text-[#F38739]">
+                  {activeActivity.categoryLabel}
+                </span>
+              </div>
+              {activeActivity.isStarred && (
+                <span className="text-[#F38739] font-black text-sm sm:text-base tracking-wide">
+                  ¡Invitada estrella!
+                </span>
+              )}
+            </div>
+
+            {/* Imagen del disertante a la IZQUIERDA pegada al borde inferior (z-20, delante de la píldora azul z-10) */}
+            <div className="absolute left-0 bottom-0 w-44 sm:w-56 md:w-64 h-[78%] sm:h-[84%] pointer-events-none z-20 hidden sm:block overflow-hidden rounded-bl-[50px]">
+              <img
+                src={activeActivity.image || '/assets/sofia-calvoe.png'}
+                alt={activeActivity.speaker}
+                className="w-full h-full object-contain object-left-bottom relative z-10"
+              />
+            </div>
+
+            {/* A la DERECHA: Título inclinado + descripciones + metadata + fecha/botón (sin z-index en el wrapper para que la píldora z-10 quede detrás del disertante z-20) */}
+            <div className="relative sm:ml-auto w-full sm:w-[62%] lg:w-[61%] flex flex-col justify-between flex-1 text-left">
+              <div className="space-y-3.5">
+                {/* Título del evento con inclinación de -3.45deg y píldora redondeada #0660AE detrás del disertante */}
+                <div className="relative inline-block transform -rotate-[3.45deg] origin-left my-1 z-10 max-w-full">
+                  <div className="absolute inset-y-0 right-0 -left-[220px] bg-[#0660AE] rounded-full shadow-[0_5px_10px_rgba(0,0,0,0.25)] -z-10" />
+                  <span className="relative z-30 block text-[#FFF5E3] text-xl sm:text-2xl font-black py-2.5 pl-4 pr-7 leading-tight">
+                    “{activeActivity.title}”
+                  </span>
+                </div>
+
+                <p className="relative z-30 text-sm sm:text-base font-medium text-[#193764] leading-snug">
+                  {activeActivity.subtitle}
+                </p>
+
+                <p className="relative z-30 text-xs sm:text-sm text-[#193764]/90 font-normal leading-relaxed">
+                  {activeActivity.description}
+                </p>
               </div>
 
-              <div className="flex flex-col items-end gap-1.5 ml-auto">
-                <button
-                  onClick={() => onOpenInscription(activeActivity.title)}
-                  className="bg-brand-orange hover:bg-brand-blue text-white px-7 py-2 rounded-full font-bold text-sm sm:text-base shadow-btn hover:shadow-btn-hover active:scale-95 transition-all"
-                >
-                  Inscribirme
-                </button>
-                <span className="font-nunito font-black text-2xl lg:text-[32px] text-[#FFF5E3] leading-none tracking-tight">
-                  {activeActivity.time}
-                </span>
+              {/* Fila inferior: Disertante/Modalidad a la izquierda, Fecha/Hora/Lugar/Botón a la derecha */}
+              <div className="relative z-30 pt-5 mt-auto flex flex-wrap items-end justify-between gap-4">
+                <div className="space-y-2 text-sm">
+                  <div>
+                    <span className="block text-xs font-medium text-[#193764]">Disertante:</span>
+                    <span className="font-black text-base sm:text-lg text-[#0660AE] leading-tight block">
+                      {activeActivity.speaker}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="block text-xs font-medium text-[#193764]">Lugar:</span>
+                    <span className="font-black text-sm sm:text-base text-[#0660AE] leading-tight block">
+                      {activeActivity.location}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-end gap-1 ml-auto text-right">
+                  <span className="font-nunito font-black text-xl sm:text-2xl text-[#F38739] leading-tight">
+                    {activeDayObj.weekday.slice(0, 3)} {String(activeDayObj.dayNum).padStart(2, '0')}
+                  </span>
+                  <span className="font-nunito font-black text-xl sm:text-2xl text-[#F38739] leading-tight">
+                    {activeActivity.time}
+                  </span>
+                  <span className="text-xs sm:text-sm font-semibold text-[#F38739] mb-1.5">
+                    {activeActivity.location}
+                  </span>
+                  <button
+                    onClick={() => onOpenInscription(activeActivity.title)}
+                    className="bg-[#F38739] hover:bg-[#0660AE] text-[#FFF5E3] px-7 py-2 rounded-full font-bold text-sm shadow-[0_5px_3px_rgba(243,135,57,0.5)] active:scale-95 transition-all"
+                  >
+                    Inscribirme
+                  </button>
+                </div>
               </div>
             </div>
 

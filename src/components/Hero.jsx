@@ -85,7 +85,7 @@ export default function Hero({ onOpenInscription }) {
               src="/assets/globo-dialogo.svg"
               alt=""
               aria-hidden="true"
-              className="w-48 sm:w-56 h-auto object-contain transform scale-x-[-1]"
+              className="w-48 sm:w-56 h-auto object-contain"
             />
             <span className="font-handwriting text-2xl sm:text-3xl text-[#193764] font-normal leading-none text-center absolute top-1 left-1/2 -translate-x-1/2 whitespace-nowrap z-10">
               ¡Y mucho más!
