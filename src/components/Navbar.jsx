@@ -30,7 +30,7 @@ export default function Navbar({ onOpenInscription }) {
             <a
               key={link.label}
               href={link.href}
-              className="text-[#133E68] text-base font-bold hover:text-brand-orange transition-colors"
+              className="text-[#193764] text-base font-bold hover:text-brand-orange transition-colors"
             >
               {link.label}
             </a>
@@ -41,7 +41,7 @@ export default function Navbar({ onOpenInscription }) {
         <div className="hidden md:flex items-center">
           <button
             onClick={() => onOpenInscription()}
-            className="bg-brand-orange hover:bg-brand-blue text-white px-7 py-2.5 rounded-full font-bold text-base shadow-btn hover:shadow-btn-hover active:scale-95 transition-all duration-200"
+            className="bg-brand-orange hover:bg-brand-blue text-[#FFF5E3] px-7 py-2.5 rounded-full font-bold text-base shadow-btn hover:shadow-btn-hover active:scale-95 transition-all duration-200"
           >
             Inscribirme
           </button>

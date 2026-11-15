@@ -4,59 +4,30 @@ export default function PartnersRibbon({
   color = 'blue',
   withFausti = false,
   topBg = '#FEF6EE',
-  bottomBg = '#EE7B30',
+  bottomBg = '#F38739',
   className = ''
 }) {
   const isBlue = color === 'blue';
-  const bgColor = isBlue ? 'bg-[#133E68]' : 'bg-[#EE7B30]';
+  const bgColor = isBlue ? 'bg-[#0660AE]' : 'bg-[#F38739]';
 
-  // Individual Partner Logo Group
+  // Individual Partner Logo Group con PNGs oficiales
   const PartnerLogoGroup = () => (
     <div className="flex items-center gap-12 sm:gap-16 lg:gap-24 shrink-0 px-6 sm:px-10">
-      
-      {/* TRES */}
-      <div className="flex items-center">
-        <span className="text-2xl sm:text-3xl font-black tracking-widest text-white select-none">
-          TR<span className="tracking-tighter">≡</span>S
-        </span>
-      </div>
-
-      {/* FAU UNNE */}
-      <div className="flex items-center gap-2.5">
-        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-white flex items-center justify-center p-1 shrink-0">
-          <svg viewBox="0 0 40 40" className="w-full h-full text-white fill-current">
-            <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" strokeWidth="2" />
-            <path d="M12 28 L12 16 M20 28 L20 12 M28 28 L28 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            <circle cx="20" cy="10" r="2" fill="currentColor" />
-          </svg>
-        </div>
-        <div className="text-left leading-tight text-white select-none">
-          <span className="block text-base sm:text-lg font-black tracking-tight">FAU</span>
-          <span className="block text-[10px] sm:text-xs font-bold tracking-wider opacity-90">UNNE</span>
-        </div>
-      </div>
-
-      {/* SAE */}
-      <div className="flex items-center gap-2">
-        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center shrink-0">
-          <span className={`font-black text-xs sm:text-sm ${isBlue ? 'text-brand-blue' : 'text-brand-orange'}`}>
-            SAE
-          </span>
-        </div>
-      </div>
-
-      {/* Gabinete Interdisciplinario */}
-      <div className="flex items-center text-left text-white select-none">
-        <div>
-          <span className="block text-sm sm:text-base font-black leading-tight">
-            Gabinete
-          </span>
-          <span className="block text-xs sm:text-sm font-bold opacity-90 leading-tight">
-            Interdisciplinario de la FAU
-          </span>
-        </div>
-      </div>
-
+      <img
+        src="/assets/logo-tres.png"
+        alt="TRES"
+        className="h-6 sm:h-7 w-auto object-contain select-none"
+      />
+      <img
+        src="/assets/logo-fau.png"
+        alt="FAU UNNE"
+        className="h-9 sm:h-11 w-auto object-contain select-none"
+      />
+      <img
+        src="/assets/logo-sae.png"
+        alt="SAE - Gabinete Interdisciplinario de la FAU"
+        className="h-9 sm:h-11 w-auto object-contain select-none"
+      />
     </div>
   );
 

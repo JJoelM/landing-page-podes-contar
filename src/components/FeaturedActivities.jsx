@@ -18,7 +18,7 @@ export default function FeaturedActivities({ onOpenInscription }) {
   };
 
   return (
-    <section className="relative py-16 sm:py-20 bg-[#EE7B30] text-white">
+    <section className="relative py-16 sm:py-20 bg-[#F38739] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Search Pill */}
@@ -26,17 +26,17 @@ export default function FeaturedActivities({ onOpenInscription }) {
 
         {/* Section Title & Description */}
         <div className="text-left mb-12 max-w-3xl">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#FFF5E3] tracking-tight leading-tight">
             Imperdibles{' '}
             <HeadingHighlight
-              color="#133E68"
-              bgColor="#133E68"
-              textColor="text-white"
+              color="#0660AE"
+              bgColor="#0660AE"
+              textColor="text-[#FFF5E3]"
             >
               actividades del evento
             </HeadingHighlight>
           </h2>
-          <p className="mt-4 text-white/95 text-base sm:text-lg font-medium leading-relaxed">
+          <p className="mt-4 text-[#FFF5E3]/95 text-base sm:text-lg font-medium leading-relaxed">
             ¡No te pierdas de las mejores actividades que traemos para vos! Desde charlas con especialistas reconocidos hasta actividades para divertirse con compañeros.
           </p>
         </div>
@@ -45,13 +45,13 @@ export default function FeaturedActivities({ onOpenInscription }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           
           {/* Card 1: Sofía Calvoe (Doble altura en escritorio ~586px = 281*2 + gap, fondo claro #FFF5E3) */}
-          <div className="lg:col-span-5 bg-[#FFF5E3] text-[#133E68] rounded-[40px] p-6 sm:p-8 flex flex-col justify-between shadow-xl relative overflow-hidden group min-h-[480px] lg:h-[586px]">
+          <div className="lg:col-span-5 bg-[#FFF5E3] text-[#193764] rounded-[40px] p-6 sm:p-8 flex flex-col justify-between shadow-xl relative overflow-hidden group min-h-[480px] lg:h-[586px]">
             
             {/* Top header row */}
             <div className="flex items-center justify-between z-20">
               <div className="flex items-center gap-2">
-                <CategoryIcon type="charla" className="w-5 h-5 shrink-0" color="#F8CBB8" />
-                <span className="font-extrabold text-sm sm:text-base text-[#133E68]">Charla</span>
+                <CategoryIcon type="charla" variant="card" className="w-6 h-6 shrink-0" color="#F8CBB8" />
+                <span className="font-extrabold text-sm sm:text-base text-[#193764]">Charla</span>
               </div>
               <span className="text-brand-orange font-extrabold text-sm sm:text-base tracking-wide">
                 ¡Invitada estrella!
@@ -59,7 +59,7 @@ export default function FeaturedActivities({ onOpenInscription }) {
             </div>
 
             {/* Imagen de Sofía Calvoe a la IZQUIERDA pegada y recortada al borde inferior (z-20 para tapar el fondo del título que va detrás) */}
-            <div className="absolute left-0 bottom-0 w-48 sm:w-56 md:w-64 h-[75%] sm:h-[82%] pointer-events-none z-20">
+            <div className="absolute left-0 bottom-0 w-36 sm:w-56 md:w-64 h-[65%] sm:h-[82%] pointer-events-none z-20">
               {/* Assets/degradado 3 10.png detrás de ella por ser fondo claro, desbordando suavemente */}
               <div className="absolute -left-16 -bottom-16 w-80 h-80 pointer-events-none z-0 opacity-80 mix-blend-multiply">
                 <img
@@ -76,23 +76,23 @@ export default function FeaturedActivities({ onOpenInscription }) {
             </div>
 
             {/* A la DERECHA: Textos y descripciones (nunca solapados por la imagen) */}
-            <div className="z-20 ml-auto w-full sm:w-[58%] lg:w-[56%] space-y-4 text-left my-auto pr-1">
+            <div className="z-20 ml-auto w-[64%] sm:w-[58%] lg:w-[56%] space-y-4 text-left my-auto pr-1">
               
               {/* Título con inclinación de -5 grados y fondo que continúa a la izquierda desapareciendo detrás de la imagen */}
               <div className="relative inline-block transform -rotate-[5deg] origin-left my-1 z-10">
-                <div className="absolute inset-y-0 right-0 -left-[600px] bg-[#133E68] rounded-r-2xl shadow-md -z-10" />
-                <span className="relative z-10 block text-white text-lg sm:text-xl font-black py-2 pl-3 pr-5">
+                <div className="absolute inset-y-0 right-0 -left-[600px] bg-[#0660AE] rounded-r-2xl shadow-md -z-10" />
+                <span className="relative z-10 block text-[#FFF5E3] text-lg sm:text-xl font-black py-2 pl-3 pr-5">
                   “{sofia.title}”
                 </span>
               </div>
 
-              <p className="text-xs sm:text-sm font-bold text-[#133E68]/90 leading-snug">
+              <p className="text-xs sm:text-sm font-bold text-[#193764]/90 leading-snug">
                 {sofia.subtitle}
               </p>
 
               <div>
-                <span className="block text-[11px] font-bold text-[#133E68]/60 uppercase tracking-wider">Disertante:</span>
-                <span className="text-base sm:text-lg font-black text-[#133E68]">{sofia.speaker}</span>
+                <span className="block text-[11px] font-bold text-[#193764]/65 uppercase tracking-wider">Disertante:</span>
+                <span className="text-base sm:text-lg font-black text-[#193764]">{sofia.speaker}</span>
               </div>
             </div>
 
@@ -124,12 +124,12 @@ export default function FeaturedActivities({ onOpenInscription }) {
             {/* Top row: 2 cards de 281px */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               
-              {/* Card 2: Eso no es humor (Fondo oscuro #0660AE / #133E68, alto 281px en desktop) */}
+              {/* Card 2: Eso no es humor (Fondo oscuro #0660AE / #0660AE, alto 281px en desktop) */}
               <div className="bg-[#0660AE] text-white rounded-[40px] p-6 sm:p-7 flex flex-col justify-between shadow-xl relative overflow-hidden min-h-[281px] lg:h-[281px]">
                 
                 {/* Header Row */}
                 <div className="flex items-center gap-2 mb-2 z-20">
-                  <CategoryIcon type="taller" className="w-5 h-5 shrink-0" color="#D4C6E0" />
+                  <CategoryIcon type="taller" variant="card" className="w-6 h-6 shrink-0" color="#D4C6E0" />
                   <span className="font-extrabold text-sm text-white">Taller</span>
                 </div>
 
@@ -138,7 +138,7 @@ export default function FeaturedActivities({ onOpenInscription }) {
                   {/* Título con fondo que continúa a la izquierda hasta chocarse con el borde de la card */}
                   <div className="relative inline-block transform -rotate-[5deg] origin-left my-1 z-10">
                     <div className="absolute inset-y-0 right-0 -left-[600px] bg-[#FFF5E3] rounded-r-2xl shadow-sm -z-10" />
-                    <span className="relative z-10 block text-[#133E68] text-lg sm:text-xl font-black py-1.5 pl-3 pr-5">
+                    <span className="relative z-10 block text-[#0660AE] text-lg sm:text-xl font-black py-1.5 pl-3 pr-5">
                       “{humor.title}”
                     </span>
                   </div>
@@ -170,24 +170,24 @@ export default function FeaturedActivities({ onOpenInscription }) {
               </div>
 
               {/* Card 3: After Class (Fondo claro #FFF5E3, alto 281px en desktop) */}
-              <div className="bg-[#FFF5E3] text-[#133E68] rounded-[40px] p-6 sm:p-7 flex flex-col justify-between shadow-xl relative overflow-hidden min-h-[281px] lg:h-[281px]">
+              <div className="bg-[#FFF5E3] text-[#193764] rounded-[40px] p-6 sm:p-7 flex flex-col justify-between shadow-xl relative overflow-hidden min-h-[281px] lg:h-[281px]">
                 
                 {/* Header Row */}
                 <div className="flex items-center gap-2 mb-2 z-20">
-                  <CategoryIcon type="recreacion" className="w-5 h-5 shrink-0" color="#A3BBD7" />
-                  <span className="font-extrabold text-sm text-[#133E68]">Recreación</span>
+                  <CategoryIcon type="recreacion" variant="card" className="w-6 h-6 shrink-0" color="#A3BBD7" />
+                  <span className="font-extrabold text-sm text-[#193764]">Recreación</span>
                 </div>
 
                 {/* Content */}
                 <div className="space-y-2 z-20 text-left">
                   {/* Título con fondo que continúa a la izquierda hasta chocarse con el borde de la card */}
                   <div className="relative inline-block transform -rotate-[5deg] origin-left my-1 z-10">
-                    <div className="absolute inset-y-0 right-0 -left-[600px] bg-[#133E68] rounded-r-2xl shadow-sm -z-10" />
-                    <span className="relative z-10 block text-white text-lg sm:text-xl font-black py-1.5 pl-3 pr-5">
+                    <div className="absolute inset-y-0 right-0 -left-[600px] bg-[#0660AE] rounded-r-2xl shadow-sm -z-10" />
+                    <span className="relative z-10 block text-[#FFF5E3] text-lg sm:text-xl font-black py-1.5 pl-3 pr-5">
                       “{afterClass.title}”
                     </span>
                   </div>
-                  <p className="text-xs sm:text-sm text-[#133E68]/90 font-medium leading-relaxed pr-2">
+                  <p className="text-xs sm:text-sm text-[#193764]/90 font-medium leading-relaxed pr-2">
                     {afterClass.subtitle}
                   </p>
                 </div>
@@ -216,12 +216,12 @@ export default function FeaturedActivities({ onOpenInscription }) {
 
             </div>
 
-            {/* Bottom Row: Ideathón express (Fondo oscuro #0660AE / #133E68, alto 281px en desktop, imagen fija recortada abajo con degradado oscuro detrás) */}
+            {/* Bottom Row: Ideathón express (Fondo oscuro #0660AE / #0660AE, alto 281px en desktop, imagen fija recortada abajo con degradado oscuro detrás) */}
             <div className="bg-[#0660AE] text-white rounded-[40px] p-6 sm:p-7 relative overflow-hidden shadow-xl min-h-[281px] lg:h-[281px] flex flex-col justify-between">
               
               {/* Header Row */}
               <div className="flex items-center gap-2 mb-2 z-20">
-                <CategoryIcon type="grupal" className="w-5 h-5 shrink-0" color="#B4DBAC" />
+                <CategoryIcon type="grupal" variant="card" className="w-6 h-6 shrink-0" color="#B4DBAC" />
                 <span className="font-extrabold text-sm text-white">Actividad grupal</span>
               </div>
 
@@ -254,7 +254,7 @@ export default function FeaturedActivities({ onOpenInscription }) {
                 {/* Título con inclinación de -5 grados y fondo que continúa a la izquierda desapareciendo detrás de las imágenes */}
                 <div className="relative inline-block transform -rotate-[5deg] origin-left my-1 z-10">
                   <div className="absolute inset-y-0 right-0 -left-[600px] bg-[#FFF5E3] rounded-r-2xl shadow-sm -z-10" />
-                  <span className="relative z-10 block text-[#133E68] text-lg sm:text-xl font-black py-1.5 pl-3 pr-5">
+                  <span className="relative z-10 block text-[#0660AE] text-lg sm:text-xl font-black py-1.5 pl-3 pr-5">
                     “{ideathon.title}”
                   </span>
                 </div>

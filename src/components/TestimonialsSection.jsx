@@ -15,7 +15,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="relative py-16 sm:py-24 bg-gradient-to-b from-[#EE7B30] to-[#E56F24] text-white overflow-hidden">
+    <section className="relative py-16 sm:py-24 bg-gradient-to-b from-[#F38739] to-[#E67628] text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Search Pill */}
@@ -27,19 +27,19 @@ export default function TestimonialsSection() {
           {/* Navigation Arrow Left - A los lados del carrusel */}
           <button
             onClick={prevSlide}
-            className="absolute -left-2 sm:left-0 lg:-left-2 top-1/2 -translate-y-1/2 z-30 w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-[#133E68] text-white flex items-center justify-center hover:bg-white hover:text-[#133E68] shadow-2xl active:scale-90 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white/40"
+            className="absolute -left-2 sm:left-0 lg:-left-2 top-1/2 -translate-y-1/2 z-30 w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-[#193764] text-[#FFF5E3] flex items-center justify-center hover:bg-[#FFF5E3] hover:text-[#193764] shadow-[0_8px_20px_rgba(2,40,72,0.45)] active:scale-90 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white/40 cursor-pointer"
             aria-label="Testimonio anterior"
           >
-            <ChevronLeft className="w-6 sm:w-7 h-6 sm:h-7" />
+            <ChevronLeft className="w-6 sm:w-7 h-6 sm:h-7" strokeWidth={3} />
           </button>
 
           {/* Navigation Arrow Right - A los lados del carrusel */}
           <button
             onClick={nextSlide}
-            className="absolute -right-2 sm:right-0 lg:-right-2 top-1/2 -translate-y-1/2 z-30 w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-[#133E68] text-white flex items-center justify-center hover:bg-white hover:text-[#133E68] shadow-2xl active:scale-90 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white/40"
+            className="absolute -right-2 sm:right-0 lg:-right-2 top-1/2 -translate-y-1/2 z-30 w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-[#193764] text-[#FFF5E3] flex items-center justify-center hover:bg-[#FFF5E3] hover:text-[#193764] shadow-[0_8px_20px_rgba(2,40,72,0.45)] active:scale-90 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white/40 cursor-pointer"
             aria-label="Testimonio siguiente"
           >
-            <ChevronRight className="w-6 sm:w-7 h-6 sm:h-7" />
+            <ChevronRight className="w-6 sm:w-7 h-6 sm:h-7" strokeWidth={3} />
           </button>
 
           {/* Cards slider wrapper */}
@@ -87,8 +87,8 @@ export default function TestimonialsSection() {
                   }`}
                 >
                   <div
-                    className={`bg-white text-[#133E68] rounded-[32px] p-6 sm:p-9 shadow-2xl border border-orange-100 relative min-h-[380px] sm:min-h-[420px] flex flex-col justify-between overflow-hidden transition-all duration-300 ${
-                      isCenter ? 'ring-2 ring-white/60 shadow-orange-950/20' : ''
+                    className={`bg-[#FFF5E3] text-[#193764] rounded-[32px] p-6 sm:p-9 shadow-2xl border border-orange-100 relative min-h-[380px] sm:min-h-[420px] flex flex-col justify-between overflow-hidden transition-all duration-300 ${
+                      isCenter ? 'ring-2 ring-[#FFF5E3]/70 shadow-orange-950/20' : ''
                     }`}
                   >
                     
@@ -108,7 +108,7 @@ export default function TestimonialsSection() {
 
                     {/* Testimonial Quote text */}
                     <div className="relative z-10 pt-16 sm:pt-20 pb-4">
-                      <p className="text-base sm:text-lg font-bold text-[#133E68] leading-relaxed">
+                      <p className="text-base sm:text-lg font-bold text-[#193764] leading-relaxed">
                         {item.quote}
                       </p>
                     </div>
@@ -119,7 +119,7 @@ export default function TestimonialsSection() {
                         <span className="block text-base sm:text-lg font-black text-brand-orange">
                           {item.author}
                         </span>
-                        <span className="block text-xs font-semibold text-[#133E68]/70">
+                        <span className="block text-xs font-semibold text-[#193764]/75">
                           {item.career}
                         </span>
                       </div>

@@ -8,11 +8,11 @@ export default {
     extend: {
       colors: {
         brand: {
-          blue: '#133E68',
-          'blue-dark': '#0E2D4C',
-          'blue-light': '#1C5B96',
-          orange: '#EE7B30',
-          'orange-hover': '#D9671E',
+          blue: '#0660AE',
+          'blue-dark': '#022848',
+          'blue-light': '#2A7BC4',
+          orange: '#F38739',
+          'orange-hover': '#D97226',
           'orange-light': '#FDB87E',
           cream: '#FFF7ED',
           'warm-bg': '#FEF6EE',
@@ -37,10 +37,10 @@ export default {
         handwriting: ['Caveat', 'cursive'],
       },
       boxShadow: {
-        'soft': '0 8px 30px rgba(19, 62, 104, 0.08)',
+        'soft': '0 8px 30px rgba(6, 96, 174, 0.08)',
         'card': '0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03)',
-        'btn': '0 4px 14px 0 rgba(238, 123, 48, 0.39)',
-        'btn-hover': '0 6px 20px rgba(19, 62, 104, 0.35)',
+        'btn': '0 4px 14px 0 rgba(243, 135, 57, 0.39)',
+        'btn-hover': '0 6px 20px rgba(6, 96, 174, 0.35)',
       }
     },
   },

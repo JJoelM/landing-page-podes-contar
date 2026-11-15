@@ -1,13 +1,13 @@
 export const categories = [
-  { id: 'charla', label: 'Charla', count: 6, color: '#133E68', bg: '#F8CBB8', border: '#F8CBB8', icon: 'flower' },
-  { id: 'exposicion', label: 'Exposición', count: 2, color: '#133E68', bg: '#FDDE52', border: '#FDDE52', icon: 'square' },
-  { id: 'taller', label: 'Taller', count: 5, color: '#133E68', bg: '#D4C6E0', border: '#D4C6E0', icon: 'sparkle' },
-  { id: 'grupal', label: 'Actividad Grupal', count: 4, color: '#133E68', bg: '#B4DBAC', border: '#B4DBAC', icon: 'star' },
-  { id: 'recreacion', label: 'Recreación', count: 3, color: '#133E68', bg: '#A3BBD7', border: '#A3BBD7', icon: 'triangle' },
+  { id: 'charla', label: 'Charla', count: 6, color: '#0660AE', bg: '#F8CBB8', border: '#F8CBB8', icon: 'flower' },
+  { id: 'exposicion', label: 'Exposición', count: 2, color: '#0660AE', bg: '#FDDE52', border: '#FDDE52', icon: 'square' },
+  { id: 'taller', label: 'Taller', count: 5, color: '#0660AE', bg: '#D4C6E0', border: '#D4C6E0', icon: 'sparkle' },
+  { id: 'grupal', label: 'Actividad Grupal', count: 4, color: '#0660AE', bg: '#B4DBAC', border: '#B4DBAC', icon: 'star' },
+  { id: 'recreacion', label: 'Recreación', count: 3, color: '#0660AE', bg: '#A3BBD7', border: '#A3BBD7', icon: 'triangle' },
 ];
 
 export const days = [
-  { id: 'lun-01', dayNum: '01', dayName: 'NOV', weekday: 'LUN', fullDate: 'Jue 4 de Noviembre' }, // default active
+  { id: 'lun-01', dayNum: '01', dayName: 'NOV', weekday: 'LUN', fullDate: 'Lun 1 de Noviembre' },
   { id: 'mar-02', dayNum: '02', dayName: 'NOV', weekday: 'MAR', fullDate: 'Mar 2 de Noviembre' },
   { id: 'mie-03', dayNum: '03', dayName: 'NOV', weekday: 'MIÉ', fullDate: 'Mié 3 de Noviembre' },
   { id: 'jue-04', dayNum: '04', dayName: 'NOV', weekday: 'JUE', fullDate: 'Jue 4 de Noviembre' },

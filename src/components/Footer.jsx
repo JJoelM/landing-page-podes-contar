@@ -3,7 +3,7 @@ import { Mail, Phone } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#133E68] text-white pt-16 pb-12 border-t border-brand-blue-dark">
+    <footer className="bg-[#0660AE] text-white pt-16 pb-12 border-t border-brand-blue-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Grid */}
@@ -109,18 +109,23 @@ export default function Footer() {
         {/* Logos & Copyright Row */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           
-          {/* Logos Row */}
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 opacity-90">
-            <span className="text-xl font-black tracking-widest text-white">TR≡S</span>
-            <div className="flex items-center gap-2 text-white">
-              <span className="font-bold text-xs uppercase tracking-tight">FAU UNNE</span>
-            </div>
-            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-              <span className="text-brand-blue font-black text-xs">SAE</span>
-            </div>
-            <span className="text-xs font-semibold text-white/90">
-              Gabinete Interdisciplinario de la FAU
-            </span>
+          {/* Logos Row con PNGs oficiales */}
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 opacity-95">
+            <img
+              src="/assets/logo-tres.png"
+              alt="TRES"
+              className="h-5 sm:h-6 w-auto object-contain select-none"
+            />
+            <img
+              src="/assets/logo-fau.png"
+              alt="FAU UNNE"
+              className="h-8 sm:h-10 w-auto object-contain select-none"
+            />
+            <img
+              src="/assets/logo-sae.png"
+              alt="SAE - Gabinete Interdisciplinario de la FAU"
+              className="h-8 sm:h-10 w-auto object-contain select-none"
+            />
           </div>
 
           {/* Copyright */}

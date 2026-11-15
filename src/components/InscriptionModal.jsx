@@ -39,12 +39,12 @@ export default function InscriptionModal({ isOpen, onClose, defaultActivity = ''
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-brand-blue/60 backdrop-blur-sm animate-in fade-in duration-200">
       
-      <div className="bg-[#FFFBF7] text-[#133E68] rounded-3xl w-full max-w-lg p-6 sm:p-8 shadow-2xl border border-orange-200 relative overflow-hidden">
+      <div className="bg-[#FFFBF7] text-[#0660AE] rounded-3xl w-full max-w-lg p-6 sm:p-8 shadow-2xl border border-orange-200 relative overflow-hidden">
         
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-5 right-5 p-2 rounded-full text-[#133E68]/70 hover:text-brand-orange hover:bg-orange-100 transition-colors"
+          className="absolute top-5 right-5 p-2 rounded-full text-[#0660AE]/70 hover:text-brand-orange hover:bg-orange-100 transition-colors"
           aria-label="Cerrar modal"
         >
           <X className="w-5 h-5" />
@@ -60,7 +60,7 @@ export default function InscriptionModal({ isOpen, onClose, defaultActivity = ''
               ¡Inscripción confirmada!
             </h3>
 
-            <p className="text-sm sm:text-base font-medium text-[#133E68]/85 max-w-sm mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base font-medium text-[#0660AE]/85 max-w-sm mx-auto leading-relaxed">
               Te anotaste exitosamente a <span className="font-extrabold text-brand-orange">“{activity}”</span>. Te enviamos los detalles a <span className="font-bold">{formData.email}</span>.
             </p>
 
@@ -89,7 +89,7 @@ export default function InscriptionModal({ isOpen, onClose, defaultActivity = ''
               <h3 className="text-2xl sm:text-3xl font-black text-brand-blue mt-1">
                 Inscripción a Actividades
               </h3>
-              <p className="text-xs sm:text-sm text-[#133E68]/75 font-medium mt-1">
+              <p className="text-xs sm:text-sm text-[#0660AE]/75 font-medium mt-1">
                 Completá tus datos para asegurar tu lugar presencial y participar de los sorteos.
               </p>
             </div>
@@ -99,7 +99,7 @@ export default function InscriptionModal({ isOpen, onClose, defaultActivity = ''
               
               {/* Activity selector */}
               <div>
-                <label className="block text-xs font-extrabold text-[#133E68] mb-1">
+                <label className="block text-xs font-extrabold text-[#0660AE] mb-1">
                   Actividad o Jornada
                 </label>
                 <div className="flex items-center gap-2 bg-[#FFF2E2] px-4 py-2.5 rounded-2xl border border-orange-200 font-bold text-sm text-brand-blue">
@@ -115,7 +115,7 @@ export default function InscriptionModal({ isOpen, onClose, defaultActivity = ''
 
               {/* Full Name */}
               <div>
-                <label className="block text-xs font-extrabold text-[#133E68] mb-1">
+                <label className="block text-xs font-extrabold text-[#0660AE] mb-1">
                   Nombre y Apellido
                 </label>
                 <input
@@ -124,19 +124,19 @@ export default function InscriptionModal({ isOpen, onClose, defaultActivity = ''
                   placeholder="Tu nombre completo"
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                  className="w-full bg-[#FFF5EC] border border-orange-200 rounded-2xl px-4 py-2.5 text-sm text-[#133E68] focus:ring-2 focus:ring-brand-orange outline-none"
+                  className="w-full bg-[#FFF5EC] border border-orange-200 rounded-2xl px-4 py-2.5 text-sm text-[#0660AE] focus:ring-2 focus:ring-brand-orange outline-none"
                 />
               </div>
 
               {/* Career */}
               <div>
-                <label className="block text-xs font-extrabold text-[#133E68] mb-1">
+                <label className="block text-xs font-extrabold text-[#0660AE] mb-1">
                   Carrera o Pertenencia
                 </label>
                 <select
                   value={formData.career}
                   onChange={(e) => setFormData({ ...formData, career: e.target.value })}
-                  className="w-full bg-[#FFF5EC] border border-orange-200 rounded-2xl px-4 py-2.5 text-sm font-semibold text-[#133E68] focus:ring-2 focus:ring-brand-orange outline-none cursor-pointer"
+                  className="w-full bg-[#FFF5EC] border border-orange-200 rounded-2xl px-4 py-2.5 text-sm font-semibold text-[#0660AE] focus:ring-2 focus:ring-brand-orange outline-none cursor-pointer"
                 >
                   <option value="Arquitectura">Arquitectura</option>
                   <option value="Diseño Gráfico">Diseño Gráfico</option>
@@ -149,7 +149,7 @@ export default function InscriptionModal({ isOpen, onClose, defaultActivity = ''
               {/* Email & Phone grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-extrabold text-[#133E68] mb-1">
+                  <label className="block text-xs font-extrabold text-[#0660AE] mb-1">
                     Email
                   </label>
                   <input
@@ -158,12 +158,12 @@ export default function InscriptionModal({ isOpen, onClose, defaultActivity = ''
                     placeholder="alumno@comunidad.unne.edu.ar"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-[#FFF5EC] border border-orange-200 rounded-2xl px-4 py-2.5 text-sm text-[#133E68] focus:ring-2 focus:ring-brand-orange outline-none"
+                    className="w-full bg-[#FFF5EC] border border-orange-200 rounded-2xl px-4 py-2.5 text-sm text-[#0660AE] focus:ring-2 focus:ring-brand-orange outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-extrabold text-[#133E68] mb-1">
+                  <label className="block text-xs font-extrabold text-[#0660AE] mb-1">
                     WhatsApp (opcional)
                   </label>
                   <input
@@ -171,7 +171,7 @@ export default function InscriptionModal({ isOpen, onClose, defaultActivity = ''
                     placeholder="3624..."
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full bg-[#FFF5EC] border border-orange-200 rounded-2xl px-4 py-2.5 text-sm text-[#133E68] focus:ring-2 focus:ring-brand-orange outline-none"
+                    className="w-full bg-[#FFF5EC] border border-orange-200 rounded-2xl px-4 py-2.5 text-sm text-[#0660AE] focus:ring-2 focus:ring-brand-orange outline-none"
                   />
                 </div>
               </div>
@@ -184,7 +184,7 @@ export default function InscriptionModal({ isOpen, onClose, defaultActivity = ''
                   onChange={(e) => setFormData({ ...formData, participateDraw: e.target.checked })}
                   className="w-4 h-4 text-brand-orange rounded border-orange-300 focus:ring-brand-orange accent-brand-orange"
                 />
-                <span className="text-xs font-bold text-[#133E68]/80">
+                <span className="text-xs font-bold text-[#0660AE]/80">
                   Deseo participar en el sorteo de premios de las jornadas
                 </span>
               </label>

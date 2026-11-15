@@ -5,12 +5,12 @@ import React from 'react';
  * Resaltador de títulos según especificación de Figma:
  * - Al inicio (izquierda): sobresale un "palito" hacia abajo y en su punta un círculo.
  * - Al final (derecha): sobresale un "palito" hacia arriba y en su punta un círculo.
- * - El color de los palitos y círculos coincide con el contexto (azul #133E68, naranja #EE7B30, etc.).
+ * - El color de los palitos y círculos coincide con el contexto (azul #0660AE, naranja #F38739, etc.).
  */
 export default function HeadingHighlight({
   children,
-  color = '#133E68',
-  bgColor = '#133E68',
+  color = '#0660AE',
+  bgColor = '#0660AE',
   textColor = 'text-white',
   className = '',
 }) {

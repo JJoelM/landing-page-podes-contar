@@ -29,7 +29,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contacto" className="relative py-16 sm:py-24 bg-gradient-to-b from-[#E56F24] to-[#D9671E] text-white">
+    <section id="contacto" className="relative py-16 sm:py-24 bg-gradient-to-b from-[#E67628] to-[#D9671E] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Search Pill */}
@@ -39,7 +39,7 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mt-8">
           
           {/* Left Card: Location & Hours (Slice 5 Left) */}
-          <div className="lg:col-span-6 bg-[#FFFBF7] text-[#133E68] rounded-3xl p-6 sm:p-8 shadow-2xl border border-orange-100 flex flex-col justify-between">
+          <div className="lg:col-span-6 bg-[#FFFBF7] text-[#0660AE] rounded-3xl p-6 sm:p-8 shadow-2xl border border-orange-100 flex flex-col justify-between">
             
             <div className="space-y-4 mb-6">
               <div>
@@ -49,7 +49,7 @@ export default function ContactSection() {
                 <h3 className="text-2xl sm:text-3xl font-black text-brand-blue mt-1">
                   Facultad de Arquitectura y Urbanismo
                 </h3>
-                <p className="text-base sm:text-lg font-bold text-[#133E68]/80">
+                <p className="text-base sm:text-lg font-bold text-[#0660AE]/80">
                   Secretaría de Asuntos Estudiantiles (SAE)
                 </p>
               </div>
@@ -62,7 +62,7 @@ export default function ContactSection() {
                 <p className="text-sm sm:text-base font-extrabold text-brand-blue">
                   Lunes a Viernes: 9:00 a 12:00 hs y de 17:00 a 20:00 hs
                 </p>
-                <div className="flex items-center gap-1.5 text-xs text-[#133E68]/70 pt-1">
+                <div className="flex items-center gap-1.5 text-xs text-[#0660AE]/70 pt-1">
                   <MapPin className="w-3.5 h-3.5 text-brand-orange shrink-0" />
                   <span>Campus Resistencia - Av. Las Heras 727, H3500 Resistencia, Chaco</span>
                 </div>
@@ -92,7 +92,7 @@ export default function ContactSection() {
           </div>
 
           {/* Right Card: Dejanos tu consulta (Slice 5 Right) */}
-          <div className="lg:col-span-6 bg-[#FFFBF7] text-[#133E68] rounded-3xl p-6 sm:p-8 shadow-2xl border border-orange-100 flex flex-col justify-between">
+          <div className="lg:col-span-6 bg-[#FFFBF7] text-[#0660AE] rounded-3xl p-6 sm:p-8 shadow-2xl border border-orange-100 flex flex-col justify-between">
             
             <div>
               <div className="flex items-center gap-2 text-brand-orange mb-2">
@@ -104,7 +104,7 @@ export default function ContactSection() {
                 Dejanos tu consulta
               </h3>
 
-              <p className="text-sm sm:text-base text-[#133E68]/85 font-medium leading-relaxed mb-6">
+              <p className="text-sm sm:text-base text-[#0660AE]/85 font-medium leading-relaxed mb-6">
                 Podés usar un seudónimo si lo preferís. Ningún dato será compartido sin tu consentimiento explícito.
               </p>
 
@@ -132,7 +132,7 @@ export default function ContactSection() {
                   
                   {/* Name or pseudonym */}
                   <div>
-                    <label className="block text-xs sm:text-sm font-extrabold text-[#133E68] mb-1.5">
+                    <label className="block text-xs sm:text-sm font-extrabold text-[#0660AE] mb-1.5">
                       Nombre o seudónimo
                     </label>
                     <input
@@ -141,13 +141,13 @@ export default function ContactSection() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Ej. Alex o Anónimo"
-                      className="w-full bg-[#FFF5EC] border border-orange-200/80 rounded-2xl px-4 py-3 text-sm text-[#133E68] placeholder-[#133E68]/50 focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all"
+                      className="w-full bg-[#FFF5EC] border border-orange-200/80 rounded-2xl px-4 py-3 text-sm text-[#0660AE] placeholder-[#0660AE]/50 focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all"
                     />
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label className="block text-xs sm:text-sm font-extrabold text-[#133E68] mb-1.5">
+                    <label className="block text-xs sm:text-sm font-extrabold text-[#0660AE] mb-1.5">
                       Correo electrónico
                     </label>
                     <input
@@ -156,13 +156,13 @@ export default function ContactSection() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="estudiante@gmail.com"
-                      className="w-full bg-[#FFF5EC] border border-orange-200/80 rounded-2xl px-4 py-3 text-sm text-[#133E68] placeholder-[#133E68]/50 focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all"
+                      className="w-full bg-[#FFF5EC] border border-orange-200/80 rounded-2xl px-4 py-3 text-sm text-[#0660AE] placeholder-[#0660AE]/50 focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all"
                     />
                   </div>
 
                   {/* Message */}
                   <div>
-                    <label className="block text-xs sm:text-sm font-extrabold text-[#133E68] mb-1.5">
+                    <label className="block text-xs sm:text-sm font-extrabold text-[#0660AE] mb-1.5">
                       Consulta o situación que querés compartir
                     </label>
                     <textarea
@@ -171,7 +171,7 @@ export default function ContactSection() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Contanos qué está pasando, qué dudas tenés o cómo podemos acompañarte..."
-                      className="w-full bg-[#FFF5EC] border border-orange-200/80 rounded-2xl px-4 py-3 text-sm text-[#133E68] placeholder-[#133E68]/50 focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all resize-none"
+                      className="w-full bg-[#FFF5EC] border border-orange-200/80 rounded-2xl px-4 py-3 text-sm text-[#0660AE] placeholder-[#0660AE]/50 focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all resize-none"
                     />
                   </div>
 
