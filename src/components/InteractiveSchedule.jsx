@@ -611,13 +611,9 @@ export default function InteractiveSchedule({ onOpenInscription }) {
 
             {/* Bastón naranja inclinado pasando por detrás del merch (z-10 < z-20), con mayor separación del texto superior */}
             <div className="mt-10 sm:mt-12 flex items-center justify-center md:justify-start">
-              <button
-                type="button"
-                onClick={() => onOpenInscription()}
-                className="relative inline-flex items-center -rotate-[1.9deg] origin-left cursor-pointer group"
-              >
+              <div className="relative inline-flex items-center -rotate-[1.9deg] origin-left select-none">
                 <div
-                  className="hidden md:block absolute inset-y-0 right-0 -left-56 bg-[#F38739] group-hover:bg-[#d97226] rounded-[50px] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] -z-10 transition-colors"
+                  className="hidden md:block absolute inset-y-0 right-0 -left-56 bg-[#F38739] rounded-[50px] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] -z-10"
                   aria-hidden="true"
                 />
                 <span className="md:hidden bg-[#F38739] rounded-[50px] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-[#FFF5E3] font-extrabold text-base sm:text-xl px-6 py-3">
@@ -632,7 +628,7 @@ export default function InteractiveSchedule({ onOpenInscription }) {
                   aria-hidden="true"
                   className="hidden sm:block absolute left-full ml-3 top-1/2 -translate-y-1/2 w-8 h-12 object-contain pointer-events-none select-none shrink-0"
                 />
-              </button>
+              </div>
             </div>
           </div>
         </div>

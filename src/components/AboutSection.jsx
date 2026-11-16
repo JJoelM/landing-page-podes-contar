@@ -78,12 +78,12 @@ export default function AboutSection() {
                   <button
                     type="button"
                     onClick={() => setSelectedToolId(null)}
-                    className="w-full bg-[#FFF5E3] text-[#193764] rounded-[22px] p-5 shadow-xl border border-orange-200/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-left transition-all duration-300 hover:shadow-2xl cursor-pointer"
+                    className="w-full min-h-[121px] bg-[#FFF5E3] text-[#193764] rounded-[30px] px-6 py-5 shadow-xl border border-orange-200/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-left transition-all duration-300 hover:shadow-2xl cursor-pointer"
                     aria-expanded="true"
                   >
-                    <div className="flex items-center gap-3 shrink-0 sm:w-[36%]">
-                      <div className="p-2.5 rounded-xl bg-[#0660AE]/10 text-[#0660AE] shrink-0">
-                        <ToolIcon type={selectedTool.iconType} className="w-6 h-6" />
+                    <div className="flex items-center gap-3.5 shrink-0 sm:w-[36%]">
+                      <div className="text-[#0660AE] shrink-0">
+                        <ToolIcon type={selectedTool.iconType} className="w-8 h-8" />
                       </div>
                       <h3 className="text-base sm:text-lg font-black text-[#193764] leading-tight">
                         {selectedTool.title}
@@ -97,19 +97,17 @@ export default function AboutSection() {
                     </div>
                   </button>
                 ) : (
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
                     {tools.map((tool) => (
                       <button
                         key={tool.id}
                         type="button"
                         onClick={() => setSelectedToolId(tool.id)}
                         aria-expanded="false"
-                        className="group w-full flex items-center gap-3 px-4 py-3.5 rounded-[20px] bg-[#F38739] text-[#FFF5E3] hover:bg-[#0660AE] active:bg-[#FFF5E3] active:text-[#0660AE] active:shadow-inner shadow-lg shadow-orange-500/20 font-black text-sm xl:text-base transition-all duration-200 text-left cursor-pointer"
+                        className="group w-full h-[121px] flex items-center justify-center gap-3.5 px-5 rounded-[30px] bg-[#F38739] text-[#FFF5E3] hover:bg-[#0660AE] active:bg-[#FFF5E3] active:text-[#0660AE] active:shadow-inner shadow-[0_5px_12px_rgba(243,135,57,0.35)] font-bold text-sm sm:text-base transition-all duration-200 text-left cursor-pointer"
                       >
-                        <div className="p-1.5 rounded-xl bg-white/15 group-active:bg-[#0660AE]/10 shrink-0 transition-colors">
-                          <ToolIcon type={tool.iconType} className="w-5 h-5" />
-                        </div>
-                        <span className="leading-tight">{tool.title}</span>
+                        <ToolIcon type={tool.iconType} className="w-7 h-7 sm:w-8 sm:h-8 shrink-0" />
+                        <span className="leading-snug">{tool.title}</span>
                       </button>
                     ))}
                   </div>
