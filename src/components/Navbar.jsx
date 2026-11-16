@@ -13,10 +13,10 @@ export default function Navbar({ onOpenInscription }) {
 
   return (
     <header className="sticky top-0 z-40 bg-[#FFFBF7]/90 backdrop-blur-md border-b border-orange-100/50 transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div className="w-full px-6 sm:px-10 lg:px-14 h-20 flex items-center justify-between">
         
         {/* Brand Logo Oficial para la barra de navegación */}
-        <a href="#" className="flex items-center group select-none">
+        <a href="#" className="flex items-center group select-none shrink-0">
           <img
             src="/assets/logo-barra-navegacion.png"
             alt="Logo Podés Contar"
@@ -24,24 +24,23 @@ export default function Navbar({ onOpenInscription }) {
           />
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-[#193764] text-base font-bold hover:text-brand-orange transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        {/* Desktop Navigation + Action Button pegados a la derecha */}
+        <div className="hidden md:flex items-center gap-8 lg:gap-10">
+          <nav className="flex items-center gap-7 lg:gap-9">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-[#193764] text-base font-bold hover:text-brand-orange transition-colors whitespace-nowrap"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
 
-        {/* Action Button */}
-        <div className="hidden md:flex items-center">
           <button
             onClick={() => onOpenInscription()}
-            className="bg-brand-orange hover:bg-brand-blue text-[#FFF5E3] px-7 py-2.5 rounded-full font-bold text-base shadow-btn hover:shadow-btn-hover active:scale-95 transition-all duration-200"
+            className="bg-brand-orange hover:bg-brand-blue text-[#FFF5E3] px-7 py-2.5 rounded-full font-bold text-base shadow-btn hover:shadow-btn-hover active:scale-95 transition-all duration-200 whitespace-nowrap"
           >
             Inscribirme
           </button>

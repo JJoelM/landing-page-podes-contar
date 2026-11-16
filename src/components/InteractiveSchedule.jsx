@@ -112,7 +112,7 @@ export default function InteractiveSchedule({ onOpenInscription }) {
         <SearchPill text="¿Cuál es nuestro cronograma de actividades?" />
 
         {/* Section Header */}
-        <div className="mb-14 text-left max-w-3xl">
+        <div className="mb-14 text-left max-w-xl lg:max-w-[54%]">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#FFF5E3] tracking-tight leading-tight">
             Jornada de{' '}
             <HeadingHighlight
@@ -132,8 +132,8 @@ export default function InteractiveSchedule({ onOpenInscription }) {
         {/* Dual Cards Grid: Misma Altura (items-stretch) + Fausti en escritorio reposado en ambos con top:-125px */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 xl:gap-8 items-stretch mb-12 sm:mb-16 lg:mb-12 relative">
           
-          {/* Fausti en ESCRITORIO reposado en AMBOS (Timeline y Filtros) con top:-125px exacto */}
-          <div className="hidden lg:block absolute -top-[125px] right-[21%] xl:right-[20%] 2xl:right-[21%] w-64 xl:w-72 z-30 pointer-events-none select-none">
+          {/* Fausti en ESCRITORIO reposado en AMBOS (Timeline y Filtros), escalando según el ancho de pantalla */}
+          <div className="hidden lg:block absolute top-0 -translate-y-[82%] right-[3%] xl:right-[4%] w-[clamp(320px,33vw,490px)] z-30 pointer-events-none select-none">
             <img
               src="/assets/fausti-mira.png"
               alt="Fausti reposado en la unión del cronograma y los filtros"
@@ -305,10 +305,10 @@ export default function InteractiveSchedule({ onOpenInscription }) {
           </div>
 
           {/* Right Card: Filter Card (Misma altura que el cronograma en desktop con lg:h-full) */}
-          <div className="lg:col-span-4 xl:col-span-3 relative mt-20 lg:mt-0 h-auto lg:h-full">
+          <div className="lg:col-span-4 xl:col-span-3 relative mt-40 sm:mt-52 lg:mt-0 h-auto lg:h-full">
             
-            {/* Fausti en MÓVILES: reposado solo en los filtros con holgura para no encimarse */}
-            <div className="lg:hidden absolute -top-14 left-1/2 transform -translate-x-1/2 w-48 sm:w-56 z-30 pointer-events-none select-none">
+            {/* Fausti en MÓVILES: reposado solo en los filtros, escalando según el ancho de pantalla */}
+            <div className="lg:hidden absolute top-0 -translate-y-[82%] left-1/2 -translate-x-1/2 w-[clamp(220px,54vw,340px)] z-30 pointer-events-none select-none">
               <img
                 src="/assets/fausti-mira.png"
                 alt="Fausti apoyado sobre los filtros en móvil"
@@ -454,97 +454,102 @@ export default function InteractiveSchedule({ onOpenInscription }) {
 
           </div>
 
-          {/* Right Box: Full Activity Detail Card (1:1 con Detalle Evento.svg) */}
-          <div className="lg:col-span-7 bg-[#FFF5E3] text-[#193764] rounded-[50px] p-6 sm:p-9 shadow-[0_5px_20px_rgba(0,0,0,0.25)] relative overflow-hidden flex flex-col justify-between min-h-[430px]">
+          {/* Right Box: Full Activity Detail Card (1:1 con Frame 147 de Figma) */}
+          <div className="lg:col-span-7 bg-[#FFF5E3] text-[#193764] rounded-[50px] p-6 sm:p-0 shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] relative overflow-hidden flex flex-col justify-between min-h-[427px]">
 
-            {/* Suave degradado naranja detrás del disertante (izquierda) */}
-            <div
-              className="pointer-events-none absolute left-0 top-0 bottom-0 w-72 rounded-l-[50px] z-0"
-              style={{
-                background: 'radial-gradient(circle at 22% 55%, rgba(243, 135, 57, 0.32) 0%, rgba(243, 135, 57, 0.12) 48%, rgba(255, 245, 227, 0) 78%)',
-              }}
-              aria-hidden="true"
-            />
+            {/* Degradado 3 9 detrás del disertante: exacto a Frame 147 (2679:16955) */}
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-[44.7%] overflow-hidden rounded-[49px] z-0" aria-hidden="true">
+              <img
+                src="/assets/degradado-claro.png"
+                alt=""
+                className="absolute h-[145.6%] left-[-86.25%] top-[-3.77%] w-[189.04%] max-w-none select-none pointer-events-none"
+              />
+            </div>
 
             {/* Top Row: Categoría a la izquierda + badge a la derecha */}
-            <div className="relative z-30 flex items-center justify-between mb-3">
+            <div className="relative z-30 flex items-center justify-between sm:pt-[33px] sm:pl-[43px] sm:pr-[38px] mb-3 sm:mb-0">
               <div className="flex items-center gap-2.5">
                 <CategoryIcon
                   type={activeActivity.category}
                   variant="card"
-                  className="w-7 h-7 shrink-0"
+                  className="w-8 h-8 sm:w-9 sm:h-[33px] shrink-0"
                   color="#F38739"
                 />
-                <span className="font-extrabold text-sm sm:text-base text-[#F38739]">
+                <span className="font-bold text-sm text-[#F38739]">
                   {activeActivity.categoryLabel}
                 </span>
               </div>
               {activeActivity.isStarred && (
-                <span className="text-[#F38739] font-black text-sm sm:text-base tracking-wide">
+                <span className="text-[#F38739] font-bold text-lg sm:text-2xl leading-none">
                   ¡Invitada estrella!
                 </span>
               )}
             </div>
 
-            {/* Imagen del disertante a la IZQUIERDA pegada al borde inferior (z-20, delante de la píldora azul z-10) */}
-            <div className="absolute left-0 bottom-0 w-44 sm:w-56 md:w-64 h-[78%] sm:h-[84%] pointer-events-none z-20 hidden sm:block overflow-hidden rounded-bl-[50px]">
+            {/* Imagen del disertante (z-20, sin deformar relación de aspecto) */}
+            <div className="hidden sm:block absolute left-0 bottom-0 w-[27%] h-[82.2%] pointer-events-none z-20 overflow-hidden rounded-bl-[49px]">
               <img
                 src={activeActivity.image || '/assets/sofia-calvoe.png'}
                 alt={activeActivity.speaker}
-                className="w-full h-full object-contain object-left-bottom relative z-10"
+                className="w-full h-full object-cover object-top select-none"
               />
             </div>
 
-            {/* A la DERECHA: Título inclinado + descripciones + metadata + fecha/botón (sin z-index en el wrapper para que la píldora z-10 quede detrás del disertante z-20) */}
-            <div className="relative sm:ml-auto w-full sm:w-[62%] lg:w-[61%] flex flex-col justify-between flex-1 text-left">
-              <div className="space-y-3.5">
-                {/* Título del evento con inclinación de -3.45deg y píldora redondeada #0660AE detrás del disertante */}
-                <div className="relative inline-block transform -rotate-[3.45deg] origin-left my-1 z-10 max-w-full">
-                  <div className="absolute inset-y-0 right-0 -left-[220px] bg-[#0660AE] rounded-full shadow-[0_5px_10px_rgba(0,0,0,0.25)] -z-10" />
-                  <span className="relative z-30 block text-[#FFF5E3] text-xl sm:text-2xl font-black py-2.5 pl-4 pr-7 leading-tight">
-                    “{activeActivity.title}”
-                  </span>
-                </div>
+            {/* Bastón azul #0660AE + Título con margen respecto al header superior (z-10 detrás del disertante z-20) */}
+            <div className="relative sm:absolute sm:left-[28.5%] sm:top-[84px] z-10 my-2 sm:my-0 -rotate-[3.45deg] origin-left">
+              <div className="relative inline-flex items-center">
+                <div
+                  className="absolute inset-y-0 right-0 -left-[120px] sm:-left-[150px] bg-[#0660AE] rounded-[30px] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] -z-10"
+                  aria-hidden="true"
+                />
+                <span className="text-[#FFF5E3] text-2xl sm:text-[28px] xl:text-[32px] font-bold leading-none whitespace-nowrap py-2.5 pl-4 pr-7">
+                  “{activeActivity.title}”
+                </span>
+              </div>
+            </div>
 
-                <p className="relative z-30 text-sm sm:text-base font-medium text-[#193764] leading-snug">
+            {/* A la DERECHA: descripciones + metadata + fecha/botón */}
+            <div className="relative sm:absolute sm:left-[29.5%] sm:right-[42px] sm:top-[162px] sm:bottom-[34px] z-30 flex flex-col justify-between text-left">
+              <div className="space-y-3">
+                <p className="text-sm sm:text-[17px] font-medium text-[#193764] leading-snug max-w-[440px]">
                   {activeActivity.subtitle}
                 </p>
 
-                <p className="relative z-30 text-xs sm:text-sm text-[#193764]/90 font-normal leading-relaxed">
+                <p className="text-xs sm:text-[16px] text-[#193764] font-light leading-snug max-w-[360px]">
                   {activeActivity.description}
                 </p>
               </div>
 
               {/* Fila inferior: Disertante/Modalidad a la izquierda, Fecha/Hora/Lugar/Botón a la derecha */}
-              <div className="relative z-30 pt-5 mt-auto flex flex-wrap items-end justify-between gap-4">
-                <div className="space-y-2 text-sm">
+              <div className="pt-4 sm:pt-0 mt-auto flex flex-wrap items-end justify-between gap-4">
+                <div className="space-y-1.5">
                   <div>
-                    <span className="block text-xs font-medium text-[#193764]">Disertante:</span>
-                    <span className="font-black text-base sm:text-lg text-[#0660AE] leading-tight block">
+                    <span className="block text-[15px] font-medium text-[#193764] leading-[22px]">Disertante:</span>
+                    <span className="font-bold text-xl sm:text-[24px] text-[#0660AE] leading-[28px] block">
                       {activeActivity.speaker}
                     </span>
                   </div>
                   <div>
-                    <span className="block text-xs font-medium text-[#193764]">Lugar:</span>
-                    <span className="font-black text-sm sm:text-base text-[#0660AE] leading-tight block">
-                      {activeActivity.location}
+                    <span className="block text-[15px] font-medium text-[#193764] leading-[18px]">Modalidad:</span>
+                    <span className="font-bold text-[16px] text-[#0660AE] leading-[18px] block">
+                      {activeActivity.modality || 'híbrida'}
                     </span>
                   </div>
                 </div>
 
                 <div className="flex flex-col items-end gap-1 ml-auto text-right">
-                  <span className="font-nunito font-black text-xl sm:text-2xl text-[#F38739] leading-tight">
+                  <span className="font-nunito font-bold text-xl sm:text-[24px] text-[#F38739] leading-[25px]">
                     {activeDayObj.weekday.slice(0, 3)} {String(activeDayObj.dayNum).padStart(2, '0')}
                   </span>
-                  <span className="font-nunito font-black text-xl sm:text-2xl text-[#F38739] leading-tight">
-                    {activeActivity.time}
+                  <span className="font-nunito font-bold text-xl sm:text-[24px] text-[#F38739] leading-[25px]">
+                    {activeActivity.time.split(' ')[0]}hs
                   </span>
-                  <span className="text-xs sm:text-sm font-semibold text-[#F38739] mb-1.5">
+                  <span className="text-[16px] font-bold text-[#F38739] leading-[25px] mb-1">
                     {activeActivity.location}
                   </span>
                   <button
                     onClick={() => onOpenInscription(activeActivity.title)}
-                    className="bg-[#F38739] hover:bg-[#0660AE] text-[#FFF5E3] px-7 py-2 rounded-full font-bold text-sm shadow-[0_5px_3px_rgba(243,135,57,0.5)] active:scale-95 transition-all"
+                    className="bg-[#F38739] hover:bg-[#0660AE] text-[#FFF5E3] w-[127px] h-[33px] rounded-[30px] font-bold text-[16px] shadow-[0_5px_3px_0_rgba(243,135,57,0.5)] active:scale-95 transition-all flex items-center justify-center"
                   >
                     Inscribirme
                   </button>
@@ -556,59 +561,78 @@ export default function InteractiveSchedule({ onOpenInscription }) {
 
         </div>
 
-        {/* Merch / Sorteo Banner (EstadoActualLanding.png) */}
-        <div className="mt-8 bg-[#0660AE] text-white rounded-[36px] px-6 sm:px-10 py-6 sm:py-8 shadow-2xl relative overflow-hidden">
+        {/* Merch / Sorteo Banner (1:1 con Frame 152 de Figma) */}
+        <div className="mt-14 sm:mt-16 bg-[#0660AE] text-[#FFF5E3] rounded-[50px] px-6 sm:px-10 py-8 sm:py-0 sm:min-h-[388px] shadow-[0_5px_20px_5px_rgba(0,0,0,0.25)] relative overflow-visible flex flex-col md:flex-row items-center">
           <img
             src="/assets/brillos-esquina.png"
             alt=""
             aria-hidden="true"
-            className="hidden sm:block absolute top-4 right-5 w-8 h-8 object-contain pointer-events-none select-none opacity-90"
+            className="hidden sm:block absolute top-8 right-10 w-12 h-12 object-contain pointer-events-none select-none z-20"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-            {/* Merch visual */}
-            <div className="md:col-span-5 flex justify-center">
+          {/* Merch visual a la izquierda, sobresaliendo arriba y tapando el inicio del bastón naranja (z-20) */}
+          <div className="md:w-[46%] lg:w-[44%] flex justify-center md:justify-start relative z-20 -mt-14 sm:-mt-16 md:-my-8 md:pl-4 pointer-events-none select-none">
+            <img
+              src="/assets/merch-degradado.png"
+              alt="Merch exclusivo Podés Contar: tote bag, remera, termo y llaveros de Fausti"
+              className="w-full max-w-[340px] sm:max-w-[440px] lg:max-w-[500px] h-auto object-contain drop-shadow-xl"
+            />
+          </div>
+
+          {/* Copy & Bastón naranja a la derecha */}
+          <div className="md:w-[54%] lg:w-[56%] text-center md:text-left relative z-10 mt-4 md:mt-0 md:py-10 md:pr-6">
+            <div className="inline-flex items-start justify-center md:justify-start gap-2.5">
               <img
-                src="/assets/merch-degradado.png"
-                alt="Merch exclusivo Podés Contar: tote bag, remera, termo y llaveros de Fausti"
-                className="w-full max-w-[300px] sm:max-w-[340px] h-auto object-contain drop-shadow-xl select-none"
+                src="/assets/exclamacion-abierta.png"
+                alt=""
+                aria-hidden="true"
+                className="h-10 sm:h-12 w-auto object-contain select-none mt-1"
+              />
+              <h3 className="text-2xl sm:text-[34px] lg:text-[36px] font-extrabold text-[#FFF5E3] leading-[1.12]">
+                Anotáte en
+                <br />
+                nuestras actividades
+              </h3>
+              <img
+                src="/assets/exclamacion-cerrada.png"
+                alt=""
+                aria-hidden="true"
+                className="h-10 sm:h-12 w-auto object-contain select-none mt-1"
               />
             </div>
 
-            {/* Copy & CTA */}
-            <div className="md:col-span-7 text-center md:text-left space-y-3">
-              <div className="inline-flex items-center justify-center md:justify-start gap-2">
-                <img
-                  src="/assets/exclamacion-abierta.png"
-                  alt=""
-                  aria-hidden="true"
-                  className="h-8 sm:h-10 w-auto object-contain select-none"
-                />
-                <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight">
-                  Anotate en nuestros{' '}
-                  <span className="text-[#FFF5E3]">eventos / actividades</span>
-                </h3>
-                <img
-                  src="/assets/exclamacion-cerrada.png"
-                  alt=""
-                  aria-hidden="true"
-                  className="h-8 sm:h-10 w-auto object-contain select-none"
-                />
-              </div>
+            <p className="mt-2.5 text-lg sm:text-[22px] lg:text-[24px] font-medium text-[#FFF5E3] leading-snug">
+              ¡Y participá por increíbles premios!
+            </p>
 
-              <p className="text-sm sm:text-base text-white/90 font-semibold max-w-xl mx-auto md:mx-0">
-                Y participá por el sorteo de merch exclusivo de la campaña de concientización sobre el ciberacoso.
-              </p>
+            <p className="mt-2 text-sm sm:text-[17px] lg:text-[18px] text-[#FFF5E3]/95 font-normal leading-snug max-w-[522px] mx-auto md:mx-0">
+              Se estará sorteando un Kit de Fausti con: un termo, una remera a elección, un set de stickers, dos llaveros y una totebag de Fausti.
+            </p>
 
-              <div className="pt-1 flex flex-wrap items-center justify-center md:justify-start gap-3">
-                <button
-                  type="button"
-                  onClick={() => onOpenInscription()}
-                  className="bg-[#F38739] hover:bg-white hover:text-[#0660AE] text-white px-6 py-2.5 rounded-full font-black text-sm sm:text-base shadow-lg transition-all active:scale-95 cursor-pointer"
-                >
-                  Sorteo ¡En la última charla!
-                </button>
-              </div>
+            {/* Bastón naranja inclinado pasando por detrás del merch (z-10 < z-20) */}
+            <div className="mt-6 flex items-center justify-center md:justify-start gap-3">
+              <button
+                type="button"
+                onClick={() => onOpenInscription()}
+                className="relative inline-flex items-center -rotate-[1.9deg] origin-left cursor-pointer group"
+              >
+                <div
+                  className="hidden md:block absolute inset-y-0 right-0 -left-56 bg-[#F38739] group-hover:bg-[#d97226] rounded-[50px] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] -z-10 transition-colors"
+                  aria-hidden="true"
+                />
+                <span className="md:hidden bg-[#F38739] rounded-[50px] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-[#FFF5E3] font-extrabold text-base sm:text-xl px-6 py-3">
+                  Sorteo el día Viernes 5 de noviembre
+                </span>
+                <span className="hidden md:block text-[#FFF5E3] font-extrabold text-xl lg:text-[24px] xl:text-[26px] leading-none whitespace-nowrap py-4 pl-2 pr-8">
+                  Sorteo el día Viernes 5 de noviembre
+                </span>
+              </button>
+              <img
+                src="/assets/brillos-sorteo.svg"
+                alt=""
+                aria-hidden="true"
+                className="hidden sm:block w-8 h-12 object-contain pointer-events-none select-none shrink-0"
+              />
             </div>
           </div>
         </div>

@@ -9,6 +9,7 @@ export const featuredActivities = [
     description: 'Te invitamos a una charla con la psicóloga para hablar sobre cómo identificar qué es acoso y qué es una crítica constructiva.',
     speaker: 'Sofía Calvoe',
     speakerRole: 'Psicóloga y especialista en dinámicas vinculares y convivencia digital universitaria',
+    modality: 'híbrida',
     date: 'Jue 04 - 09:00hs',
     location: 'Auditorio FAU-UNNE',
     dayId: 'jue-04',
@@ -66,7 +67,6 @@ export const featuredActivities = [
     time: '09:00 - 13:00',
     mentors: [
       '/assets/ideathon-speaker-1.png',
-      '/assets/ideathon-speaker-2.png',
     ],
     isStarred: false,
   },

@@ -79,17 +79,21 @@ export default function Hero({ onOpenInscription }) {
             </div>
           </div>
 
-          {/* globo diálogo.svg apuntando hacia Fausti a la izquierda y texto centrado */}
-          <div className="relative flex items-center justify-center mt-5 pointer-events-none select-none w-56 sm:w-64 mx-auto">
-            <img
-              src="/assets/globo-dialogo.svg"
-              alt=""
-              aria-hidden="true"
-              className="w-48 sm:w-56 h-auto object-contain"
-            />
-            <span className="font-handwriting text-2xl sm:text-3xl text-[#193764] font-normal leading-none text-center absolute top-1 left-1/2 -translate-x-1/2 whitespace-nowrap z-10">
-              ¡Y mucho más!
-            </span>
+          {/* "Podés venir, podés contar." centrado en la página y globo diálogo.svg a su izquierda */}
+          <div className="mt-5 flex justify-center pointer-events-none select-none">
+            <div className="relative inline-flex items-center justify-center">
+              <img
+                src="/assets/globo-dialogo.svg"
+                alt=""
+                aria-hidden="true"
+                className="absolute right-full mr-3 sm:mr-4 top-1/2 -translate-y-1/2 w-24 sm:w-44 md:w-48 h-auto object-contain"
+              />
+              <span className="font-handwriting text-2xl sm:text-3xl text-[#193764] font-normal leading-tight text-center whitespace-nowrap">
+                Podés venir,
+                <br />
+                podés contar.
+              </span>
+            </div>
           </div>
         </div>
 
