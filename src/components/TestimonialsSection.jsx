@@ -15,7 +15,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="relative py-16 sm:py-24 bg-gradient-to-b from-[#F38739] to-[#E67628] text-white overflow-hidden">
+    <section id="testimonios" className="relative py-16 sm:py-24 bg-gradient-to-b from-[#F38739] to-[#E67628] text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Search Pill */}

@@ -78,3 +78,17 @@
 .animate-float-slow {
   animation: floatSlow 5s ease-in-out infinite;
 }
+
+/* Hover upward loop for Back to Top button */
+@keyframes hoverUpLoop {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.back-to-top-btn:hover {
+  animation: hoverUpLoop 0.8s ease-in-out infinite;
+}

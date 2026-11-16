@@ -8,7 +8,7 @@ export default function Navbar({ onOpenInscription }) {
     { label: '¿Quiénes somos?', href: '#quienes-somos' },
     { label: 'Cronograma', href: '#cronograma' },
     { label: 'Consultas', href: '#consultas' },
-    { label: 'Contactanos', href: '#contacto' },
+    { label: 'Testimonios', href: '#testimonios' },
   ];
 
   return (

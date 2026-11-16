@@ -100,7 +100,7 @@ export default function Hero({ onOpenInscription }) {
       </div>
 
       {/* Fausti en puff a la IZQUIERDA (doble de tamaño en escritorio, igualando el tamaño del puff derecho) */}
-      <div className="absolute -left-6 sm:-left-10 lg:-left-14 bottom-0 z-0 pointer-events-none select-none">
+      <div className="absolute -left-1 sm:-left-5 lg:-left-9 bottom-0 z-0 pointer-events-none select-none">
         <div className="relative w-44 sm:w-72 md:w-88 lg:w-[500px] xl:w-[560px] max-w-none">
           <img
             src="/assets/fausti-puff.png"
@@ -111,7 +111,7 @@ export default function Hero({ onOpenInscription }) {
       </div>
 
       {/* Puff vacío a la DERECHA (triple de tamaño en escritorio, coincidiendo con el puff de Fausti) */}
-      <div className="absolute -right-10 sm:-right-14 lg:-right-16 bottom-0 z-0 pointer-events-none select-none">
+      <div className="absolute -right-5 sm:-right-9 lg:-right-11 bottom-0 z-0 pointer-events-none select-none">
         <div className="relative w-48 sm:w-80 md:w-96 lg:w-[560px] xl:w-[640px] max-w-none">
           <img
             src="/assets/puff.png"

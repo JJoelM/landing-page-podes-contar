@@ -9,6 +9,7 @@ import TestimonialsSection from './components/TestimonialsSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import InscriptionModal from './components/InscriptionModal';
+import BackToTop from './components/BackToTop';
 
 export default function App() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -76,6 +77,9 @@ export default function App() {
         onClose={() => setModalOpen(false)}
         defaultActivity={selectedActivity}
       />
+
+      {/* Sticky Back to Top button */}
+      <BackToTop />
     </div>
   );
 }
