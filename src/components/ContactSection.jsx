@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SearchPill from './SearchPill';
-import { Send, CheckCircle2, Clock, MapPin, ShieldCheck } from 'lucide-react';
+import { Send, CheckCircle2, Clock, MapPin } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function ContactSection() {
@@ -46,23 +46,23 @@ export default function ContactSection() {
                 <span className="text-xs font-black tracking-wider text-brand-orange uppercase">
                   Sede Presencial
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-black text-brand-blue mt-1">
+                <h3 className="text-2xl sm:text-3xl font-black text-[#484848] mt-1">
                   Facultad de Arquitectura y Urbanismo
                 </h3>
-                <p className="text-base sm:text-lg font-bold text-[#0660AE]/80">
+                <p className="text-base sm:text-lg font-bold text-[#484848]">
                   Secretaría de Asuntos Estudiantiles (SAE)
                 </p>
               </div>
 
               <div className="p-4 rounded-2xl bg-[#FFF5EC] border border-orange-200/50 space-y-2">
-                <div className="flex items-center gap-2 text-brand-orange font-bold text-sm">
-                  <Clock className="w-4 h-4" />
+                <div className="flex items-center gap-2 text-[#484848] font-bold text-sm">
+                  <Clock className="w-4 h-4 text-brand-orange" />
                   <span>Horarios de atención</span>
                 </div>
-                <p className="text-sm sm:text-base font-extrabold text-brand-blue">
+                <p className="text-sm sm:text-base font-extrabold text-[#484848]">
                   Lunes a Viernes: 9:00 a 12:00 hs y de 17:00 a 20:00 hs
                 </p>
-                <div className="flex items-center gap-1.5 text-xs text-[#0660AE]/70 pt-1">
+                <div className="flex items-center gap-1.5 text-xs text-[#484848]/80 pt-1">
                   <MapPin className="w-3.5 h-3.5 text-brand-orange shrink-0" />
                   <span>Campus Resistencia - Av. Las Heras 727, H3500 Resistencia, Chaco</span>
                 </div>
@@ -95,16 +95,15 @@ export default function ContactSection() {
           <div className="lg:col-span-6 bg-[#FFFBF7] text-[#0660AE] rounded-3xl p-6 sm:p-8 shadow-2xl border border-orange-100 flex flex-col justify-between">
             
             <div>
-              <div className="flex items-center gap-2 text-brand-orange mb-2">
-                <ShieldCheck className="w-5 h-5" />
+              <div className="text-brand-orange mb-2">
                 <span className="text-xs font-black tracking-wider uppercase">Canal Seguro & Confidencial</span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-black text-brand-blue mb-2">
+              <h3 className="text-2xl sm:text-3xl font-black text-[#193764] mb-2">
                 Dejanos tu consulta
               </h3>
 
-              <p className="text-sm sm:text-base text-[#0660AE]/85 font-medium leading-relaxed mb-6">
+              <p className="text-sm sm:text-base text-[#193764] font-medium leading-relaxed mb-6">
                 Podés usar un seudónimo si lo preferís. Ningún dato será compartido sin tu consentimiento explícito.
               </p>
 
@@ -132,7 +131,7 @@ export default function ContactSection() {
                   
                   {/* Name or pseudonym */}
                   <div>
-                    <label className="block text-xs sm:text-sm font-extrabold text-[#0660AE] mb-1.5">
+                    <label className="block text-xs sm:text-sm font-extrabold text-[#484848] mb-1.5">
                       Nombre o seudónimo
                     </label>
                     <input
@@ -141,13 +140,13 @@ export default function ContactSection() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Ej. Alex o Anónimo"
-                      className="w-full bg-[#FFF5EC] border border-orange-200/80 rounded-2xl px-4 py-3 text-sm text-[#0660AE] placeholder-[#0660AE]/50 focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all"
+                      className="w-full bg-[#FFF5EC] border border-orange-200/80 rounded-2xl px-4 py-3 text-sm text-[#484848] placeholder-[#484848]/70 focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all"
                     />
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label className="block text-xs sm:text-sm font-extrabold text-[#0660AE] mb-1.5">
+                    <label className="block text-xs sm:text-sm font-extrabold text-[#484848] mb-1.5">
                       Correo electrónico
                     </label>
                     <input
@@ -156,13 +155,13 @@ export default function ContactSection() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="estudiante@gmail.com"
-                      className="w-full bg-[#FFF5EC] border border-orange-200/80 rounded-2xl px-4 py-3 text-sm text-[#0660AE] placeholder-[#0660AE]/50 focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all"
+                      className="w-full bg-[#FFF5EC] border border-orange-200/80 rounded-2xl px-4 py-3 text-sm text-[#484848] placeholder-[#484848]/70 focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all"
                     />
                   </div>
 
                   {/* Message */}
                   <div>
-                    <label className="block text-xs sm:text-sm font-extrabold text-[#0660AE] mb-1.5">
+                    <label className="block text-xs sm:text-sm font-extrabold text-[#484848] mb-1.5">
                       Consulta o situación que querés compartir
                     </label>
                     <textarea
@@ -171,7 +170,7 @@ export default function ContactSection() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Contanos qué está pasando, qué dudas tenés o cómo podemos acompañarte..."
-                      className="w-full bg-[#FFF5EC] border border-orange-200/80 rounded-2xl px-4 py-3 text-sm text-[#0660AE] placeholder-[#0660AE]/50 focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all resize-none"
+                      className="w-full bg-[#FFF5EC] border border-orange-200/80 rounded-2xl px-4 py-3 text-sm text-[#484848] placeholder-[#484848]/70 focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all resize-none"
                     />
                   </div>
 
