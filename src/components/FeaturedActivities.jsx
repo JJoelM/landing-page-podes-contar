@@ -21,24 +21,7 @@ export default function FeaturedActivities({ onOpenInscription }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Search Pill */}
-        <SearchPill text="¿Cuáles son nuestras próximas actividades?" />
-
-        {/* Section Title & Description */}
-        <div className="text-left mb-12 max-w-3xl">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#FFF5E3] tracking-tight leading-tight">
-            Imperdibles{' '}
-            <HeadingHighlight
-              color="#0660AE"
-              bgColor="#0660AE"
-              textColor="text-[#FFF5E3]"
-            >
-              actividades del evento
-            </HeadingHighlight>
-          </h2>
-          <p className="mt-4 text-[#FFF5E3]/95 text-base sm:text-lg font-medium leading-relaxed">
-            ¡No te pierdas de las mejores actividades que traemos para vos! Desde charlas con especialistas reconocidos hasta actividades para divertirse con compañeros.
-          </p>
-        </div>
+        <SearchPill text="Actividades principales" />
 
         {/* Bento Grid: 2 columns in desktop (Left: 5 cols double-height, Right: 7 cols with 2 rows of 281px cards) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
@@ -261,27 +244,27 @@ export default function FeaturedActivities({ onOpenInscription }) {
               </div>
 
               {/* Bastón crema #FFF5E3 + Título Ideas que cuentan en un único contenedor rotado (z-10 detrás de la imagen z-20) */}
-              <div className="absolute left-[36%] sm:left-[38%] top-[54px] z-10 -rotate-[4.73deg] origin-left">
+              <div className="absolute left-6 sm:left-[38%] top-[62px] sm:top-[54px] z-10 -rotate-[4.73deg] origin-left">
                 <div className="relative inline-flex items-center">
                   <div
                     className="absolute inset-y-0 right-0 -left-[80px] sm:-left-[95px] bg-[#FFF5E3] rounded-[30px] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] -z-10"
                     aria-hidden="true"
                   />
-                  <span className="text-[#0660AE] text-2xl sm:text-[28px] xl:text-[32px] font-bold leading-none whitespace-nowrap py-2.5 pl-4 pr-7">
+                  <span className="text-[#0660AE] text-2xl sm:text-[28px] xl:text-[32px] font-bold leading-none whitespace-nowrap py-2.5 pl-2 sm:pl-4 pr-7">
                     Ideas que cuentan
                   </span>
                 </div>
               </div>
 
-              {/* Imagen unificada de ambas disertantes más chica al borde inferior (z-20 para cortar el bastón z-10 detrás) */}
+              {/* Imagen unificada de ambas disertantes: oculta en móvil, visible desde sm (z-20 para cortar el bastón z-10 detrás) */}
               <img
                 src={ideathon.mentors[0]}
                 alt="Mentoras Ideathón"
-                className="pointer-events-none select-none absolute left-0 bottom-0 h-[70%] sm:h-[78%] w-auto object-contain object-left-bottom z-20"
+                className="hidden sm:block pointer-events-none select-none absolute left-0 bottom-0 h-[78%] w-auto object-contain object-left-bottom z-20"
               />
 
               {/* Descripción a la derecha con holgura debajo del bastón (z-30) */}
-              <p className="relative sm:absolute sm:left-[45.4%] right-6 sm:right-[32px] sm:top-[122px] mt-20 sm:mt-0 pl-40 sm:pl-0 pr-5 sm:pr-0 z-30 text-xs sm:text-[15px] text-[#FFF5E3] leading-snug text-left">
+              <p className="relative sm:absolute sm:left-[45.4%] sm:right-[32px] sm:top-[122px] mt-20 sm:mt-0 px-8 sm:px-0 pb-24 sm:pb-0 z-30 text-xs sm:text-[15px] text-[#FFF5E3] leading-snug text-left">
                 Te invitamos a participar de una <span className="font-bold">Ideathón Express</span> dónde las tres carreras <span className="font-bold">proponen soluciones rápidas</span> contra el ciberacoso.
               </p>
 

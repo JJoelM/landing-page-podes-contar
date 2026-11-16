@@ -29,28 +29,25 @@ export default function AboutSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
-        {/* Campaign sub-header con logo apaisado oficial */}
-        <div className="text-center mb-6">
-          <div className="inline-flex flex-col items-center select-none">
-            <img
-              src="/assets/logo-apaisado.png"
-              alt="Logo oficial Podés Contar"
-              className="h-9 sm:h-12 md:h-13 w-auto object-contain"
-            />
-            <span className="text-xs sm:text-sm font-extrabold text-brand-blue/80 tracking-wide mt-1.5">
-              Campaña de concientización sobre el ciberacoso
-            </span>
-          </div>
-        </div>
-
-        {/* Search Pill */}
+        {/* Search Pill encima del logo, como en Desktop - 2 */}
         <SearchPill text="¿Quienes somos?" />
 
-        {/* Top Grid: Texto + Herramientas a la izquierda, Fausti con degradado 3 10 a la derecha */}
+        {/* Top Grid: Logo grande + Texto + Herramientas a la izquierda, Fausti con degradado 3 10 a la derecha */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-8 sm:mb-12">
           
-          {/* Left Column: Título (#193764), Párrafo (#484848) y Herramientas debajo */}
+          {/* Left Column: Logo campaña (3x más grande) + Título (#193764) + Párrafo (#484848) y Herramientas debajo */}
           <div className="lg:col-span-7 xl:col-span-7 space-y-6 text-center lg:text-left">
+            <div className="inline-flex flex-col items-center lg:items-start select-none mb-2">
+              <img
+                src="/assets/logo-apaisado.png"
+                alt="Logo oficial Podés Contar"
+                className="h-24 sm:h-28 lg:h-[126px] w-auto object-contain"
+              />
+              <span className="text-sm sm:text-base lg:text-lg font-extrabold text-brand-blue/85 tracking-wide mt-2">
+                Campaña de concientización sobre el ciberacoso
+              </span>
+            </div>
+
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#193764] tracking-tight leading-tight">
               Una red universitaria{' '}
               <HeadingHighlight
@@ -60,7 +57,6 @@ export default function AboutSection() {
               >
                 libre de acoso
               </HeadingHighlight>
-              , etiquetas denigrantes y hostigamiento en grupos.
             </h2>
 
             <p className="text-base sm:text-lg text-[#484848] font-bold leading-relaxed max-w-2xl mx-auto lg:mx-0">

@@ -508,8 +508,8 @@ export default function InteractiveSchedule({ onOpenInscription }) {
               </div>
             </div>
 
-            {/* A la DERECHA: descripciones + metadata + fecha/botón */}
-            <div className="relative sm:absolute sm:left-[29.5%] sm:right-[42px] sm:top-[162px] sm:bottom-[34px] z-30 flex flex-col justify-between text-left">
+            {/* A la DERECHA: en flujo normal para que la card crezca si el texto es largo y el botón nunca quede fuera */}
+            <div className="relative z-30 sm:pl-[29.5%] sm:pr-[42px] pt-3 sm:pt-[96px] sm:pb-[34px] flex-1 flex flex-col justify-between text-left">
               <div className="space-y-3">
                 <p className="text-sm sm:text-[17px] font-medium text-[#193764] leading-snug max-w-[440px]">
                   {activeActivity.subtitle}

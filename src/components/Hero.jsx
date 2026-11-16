@@ -97,16 +97,6 @@ export default function Hero({ onOpenInscription }) {
           </div>
         </div>
 
-        {/* Mobile Call to Action */}
-        <div className="pt-4 block sm:hidden">
-          <button
-            onClick={() => onOpenInscription()}
-            className="w-full bg-[#F38739] text-[#FFF5E3] py-3 rounded-full font-black text-lg shadow-btn"
-          >
-            Inscribirme
-          </button>
-        </div>
-
       </div>
 
       {/* Fausti en puff a la IZQUIERDA (doble de tamaño en escritorio, igualando el tamaño del puff derecho) */}
