@@ -562,7 +562,7 @@ export default function InteractiveSchedule({ onOpenInscription }) {
         </div>
 
         {/* Merch / Sorteo Banner (1:1 con Frame 152 de Figma) */}
-        <div className="mt-14 sm:mt-16 bg-[#0660AE] text-[#FFF5E3] rounded-[50px] px-6 sm:px-10 py-8 sm:py-0 sm:min-h-[388px] shadow-[0_5px_20px_5px_rgba(0,0,0,0.25)] relative overflow-visible flex flex-col md:flex-row items-center">
+        <div className="mt-14 sm:mt-16 bg-[#0660AE] text-[#FFF5E3] rounded-[50px] px-6 sm:px-10 md:pl-0 md:pr-10 py-8 sm:py-0 sm:min-h-[388px] shadow-[0_5px_20px_5px_rgba(0,0,0,0.25)] relative overflow-visible flex flex-col md:flex-row items-center">
           <img
             src="/assets/brillos-esquina.png"
             alt=""
@@ -570,17 +570,17 @@ export default function InteractiveSchedule({ onOpenInscription }) {
             className="hidden sm:block absolute top-8 right-10 w-12 h-12 object-contain pointer-events-none select-none z-20"
           />
 
-          {/* Merch visual a la izquierda, sobresaliendo arriba y tapando el inicio del bastón naranja (z-20) */}
-          <div className="md:w-[46%] lg:w-[44%] flex justify-center md:justify-start relative z-20 -mt-14 sm:-mt-16 md:-my-8 md:pl-4 pointer-events-none select-none">
+          {/* Merch visual pegado al borde izquierdo e inferior del contenedor (sin márgenes, z-20) */}
+          <div className="w-full md:w-auto md:absolute md:left-0 md:bottom-0 flex justify-center md:justify-start relative z-20 -mt-14 sm:-mt-16 md:mt-0 pointer-events-none select-none">
             <img
               src="/assets/merch-degradado.png"
               alt="Merch exclusivo Podés Contar: tote bag, remera, termo y llaveros de Fausti"
-              className="w-full max-w-[340px] sm:max-w-[440px] lg:max-w-[500px] h-auto object-contain drop-shadow-xl"
+              className="w-full max-w-[340px] sm:max-w-[440px] md:max-w-none md:w-[440px] lg:w-[560px] xl:w-[620px] h-auto object-contain object-left-bottom rounded-bl-[50px]"
             />
           </div>
 
           {/* Copy & Bastón naranja a la derecha */}
-          <div className="md:w-[54%] lg:w-[56%] text-center md:text-left relative z-10 mt-4 md:mt-0 md:py-10 md:pr-6">
+          <div className="md:ml-auto md:w-[54%] lg:w-[52%] text-center md:text-left relative z-10 mt-4 md:mt-0 md:py-10 md:pr-4">
             <div className="inline-flex items-start justify-center md:justify-start gap-2.5">
               <img
                 src="/assets/exclamacion-abierta.png"
@@ -609,8 +609,8 @@ export default function InteractiveSchedule({ onOpenInscription }) {
               Se estará sorteando un Kit de Fausti con: un termo, una remera a elección, un set de stickers, dos llaveros y una totebag de Fausti.
             </p>
 
-            {/* Bastón naranja inclinado pasando por detrás del merch (z-10 < z-20) */}
-            <div className="mt-6 flex items-center justify-center md:justify-start gap-3">
+            {/* Bastón naranja inclinado pasando por detrás del merch (z-10 < z-20), con mayor separación del texto superior */}
+            <div className="mt-10 sm:mt-12 flex items-center justify-center md:justify-start">
               <button
                 type="button"
                 onClick={() => onOpenInscription()}
@@ -626,13 +626,13 @@ export default function InteractiveSchedule({ onOpenInscription }) {
                 <span className="hidden md:block text-[#FFF5E3] font-extrabold text-xl lg:text-[24px] xl:text-[26px] leading-none whitespace-nowrap py-4 pl-2 pr-8">
                   Sorteo el día Viernes 5 de noviembre
                 </span>
+                <img
+                  src="/assets/brillos-sorteo.svg"
+                  alt=""
+                  aria-hidden="true"
+                  className="hidden sm:block absolute left-full ml-3 top-1/2 -translate-y-1/2 w-8 h-12 object-contain pointer-events-none select-none shrink-0"
+                />
               </button>
-              <img
-                src="/assets/brillos-sorteo.svg"
-                alt=""
-                aria-hidden="true"
-                className="hidden sm:block w-8 h-12 object-contain pointer-events-none select-none shrink-0"
-              />
             </div>
           </div>
         </div>

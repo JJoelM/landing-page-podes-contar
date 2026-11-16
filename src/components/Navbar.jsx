@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar({ onOpenInscription }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { label: '¿Quiénes somos?', href: '#quienes-somos' },
@@ -12,7 +22,13 @@ export default function Navbar({ onOpenInscription }) {
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-[#FFFBF7]/90 backdrop-blur-md border-b border-orange-100/50 transition-all">
+    <header
+      className={`sticky top-0 z-40 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-gradient-to-b from-[#FFFBF7]/95 via-[#FFFBF7]/80 to-transparent backdrop-blur-sm'
+          : 'bg-[#FEF6EE] border-b border-orange-100/40'
+      }`}
+    >
       <div className="w-full px-6 sm:px-10 lg:px-14 h-20 flex items-center justify-between">
         
         {/* Brand Logo Oficial para la barra de navegación */}
