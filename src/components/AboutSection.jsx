@@ -39,13 +39,10 @@ export default function AboutSection() {
           <div className="lg:col-span-7 xl:col-span-7 space-y-6 text-center lg:text-left">
             <div className="inline-flex flex-col items-center lg:items-start select-none mb-2">
               <img
-                src="/assets/logo-apaisado.png"
-                alt="Logo oficial Podés Contar"
+                src="/assets/logo-con-bajada.png"
+                alt="Logo oficial Podés Contar - Campaña de concientización sobre el ciberacoso"
                 className="h-24 sm:h-28 lg:h-[126px] w-auto object-contain"
               />
-              <span className="text-sm sm:text-base lg:text-lg font-extrabold text-brand-blue/85 tracking-wide mt-2">
-                Campaña de concientización sobre el ciberacoso
-              </span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#193764] tracking-tight leading-tight">

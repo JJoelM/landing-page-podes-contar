@@ -11,7 +11,7 @@ export const categoryColorMap = {
 export const categoryIconMap = {
   card: {
     charla: '/assets/card-charla.png',
-    exposicion: '/assets/icono-exposicion.png',
+    exposicion: '/assets/card-exposicion.png',
     taller: '/assets/card-taller.png',
     grupal: '/assets/card-actividad-grupal.png',
     recreacion: '/assets/card-recreacion.png',
