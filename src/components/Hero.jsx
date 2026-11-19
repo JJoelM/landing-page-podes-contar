@@ -82,16 +82,16 @@ export default function Hero({ onOpenInscription }) {
 
       </div>
 
-      {/* Puffs en <xl (móvil, tablet y 1024px): en flujo normal debajo del texto, centrados y separados de los bordes sin pisar nunca el texto */}
+      {/* Puffs en <xl (móvil, tablet y 1024px): en flujo normal debajo del texto, creciendo un 50% en lg (1024px) */}
       <div className="xl:hidden mt-6 px-4 sm:px-10 flex items-end justify-center gap-4 sm:gap-10 pointer-events-none select-none">
-        <div className="w-[44%] max-w-[260px] sm:max-w-[300px]">
+        <div className="w-[44%] lg:w-[46%] max-w-[260px] sm:max-w-[300px] lg:max-w-[460px]">
           <img
             src="/assets/fausti-puff.png"
             alt="Fausti sentado en un puff naranja"
             className="w-full h-auto object-contain"
           />
         </div>
-        <div className="w-[44%] max-w-[260px] sm:max-w-[300px]">
+        <div className="w-[44%] lg:w-[46%] max-w-[260px] sm:max-w-[300px] lg:max-w-[460px]">
           <img
             src="/assets/puff.png"
             alt="Puff naranja"
@@ -100,9 +100,9 @@ export default function Hero({ onOpenInscription }) {
         </div>
       </div>
 
-      {/* Fausti en puff a la IZQUIERDA en xl+ (separado del borde y sin superponerse al texto max-w-xl) */}
-      <div className="hidden xl:block absolute left-6 2xl:left-14 bottom-0 z-0 pointer-events-none select-none">
-        <div className="relative w-[300px] 2xl:w-[390px]">
+      {/* Fausti en puff a la IZQUIERDA en xl+ (50% más grande, escalando con la resolución) */}
+      <div className="hidden xl:block absolute left-2 2xl:left-8 bottom-0 z-0 pointer-events-none select-none">
+        <div className="relative w-[clamp(440px,36vw,780px)]">
           <img
             src="/assets/fausti-puff.png"
             alt="Fausti sentado en un puff naranja"
@@ -111,9 +111,9 @@ export default function Hero({ onOpenInscription }) {
         </div>
       </div>
 
-      {/* Puff vacío a la DERECHA en xl+ (simétrico al izquierdo, mismo lienzo y misma base) */}
-      <div className="hidden xl:block absolute right-6 2xl:right-14 bottom-0 z-0 pointer-events-none select-none">
-        <div className="relative w-[300px] 2xl:w-[390px]">
+      {/* Puff vacío a la DERECHA en xl+ (50% más grande, simétrico al izquierdo) */}
+      <div className="hidden xl:block absolute right-2 2xl:right-8 bottom-0 z-0 pointer-events-none select-none">
+        <div className="relative w-[clamp(440px,36vw,780px)]">
           <img
             src="/assets/puff.png"
             alt="Puff naranja"
