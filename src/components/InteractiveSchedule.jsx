@@ -543,19 +543,19 @@ export default function InteractiveSchedule({ onOpenInscription }) {
                 </p>
               </div>
 
-              {/* Fila inferior: Disertante/Modalidad a la izquierda, Fecha/Hora/Lugar/Botón a la derecha */}
-              <div className="pt-4 sm:pt-2 mt-auto flex flex-wrap items-end justify-between gap-4">
-                <div className="space-y-2">
+              {/* Fila inferior: Disertante/Modalidad a la izquierda (con salto de línea controlado), Fecha/Hora/Lugar/Botón fijo a la derecha */}
+              <div className="pt-4 sm:pt-2 mt-auto flex flex-wrap sm:flex-nowrap items-end justify-between gap-4">
+                <div className="space-y-2 min-w-0 sm:max-w-[230px]">
                   <div>
                     <span className="block text-[15px] font-medium text-[#193764] leading-[22px]">Disertante:</span>
                     {Array.isArray(activeActivity.speaker) ? (
                       activeActivity.speaker.map((name) => (
-                        <span key={name} className="font-bold text-xl sm:text-[24px] text-[#0660AE] leading-[28px] block">
+                        <span key={name} className="font-bold text-lg sm:text-[21px] xl:text-[23px] text-[#0660AE] leading-[26px] block">
                           {name}
                         </span>
                       ))
                     ) : (
-                      <span className="font-bold text-xl sm:text-[24px] text-[#0660AE] leading-[28px] block">
+                      <span className="font-bold text-lg sm:text-[21px] xl:text-[23px] text-[#0660AE] leading-[26px] block break-words">
                         {activeActivity.speaker}
                       </span>
                     )}
@@ -568,7 +568,7 @@ export default function InteractiveSchedule({ onOpenInscription }) {
                   </div>
                 </div>
 
-                <div className="flex flex-col items-end gap-1 ml-auto text-right">
+                <div className="flex flex-col items-end gap-1 ml-auto text-right shrink-0">
                   <span className="font-nunito font-bold text-xl sm:text-[24px] text-[#F38739] leading-[25px]">
                     {activeDayObj.weekday.slice(0, 3)} {String(activeDayObj.dayNum).padStart(2, '0')}
                   </span>
