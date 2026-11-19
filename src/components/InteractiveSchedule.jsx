@@ -142,7 +142,7 @@ export default function InteractiveSchedule({ onOpenInscription }) {
           </div>
 
           {/* Timeline Card */}
-          <div className="lg:col-span-8 xl:col-span-9 bg-[#FFF5E3] text-[#193764] rounded-[36px] p-6 sm:p-8 shadow-2xl border border-orange-100 relative h-full flex flex-col justify-between">
+          <div className="lg:col-span-8 xl:col-span-9 bg-white text-[#193764] rounded-[36px] p-6 sm:p-8 shadow-2xl border border-orange-100 relative h-full flex flex-col justify-between">
             
             <div>
               {/* Timeline Header note for mobile touch */}
@@ -317,7 +317,7 @@ export default function InteractiveSchedule({ onOpenInscription }) {
             </div>
 
             {/* Filter Card */}
-            <div className="bg-[#FFF5E3] text-[#193764] rounded-[36px] p-6 sm:p-7 shadow-2xl border border-orange-100 relative z-20 h-auto lg:h-full flex flex-col justify-between">
+            <div className="bg-white text-[#193764] rounded-[36px] p-6 sm:p-7 shadow-2xl border border-orange-100 relative z-20 h-auto lg:h-full flex flex-col justify-between">
               
               <div>
                 <div className="flex items-center justify-between pt-1 mb-4">
@@ -380,7 +380,7 @@ export default function InteractiveSchedule({ onOpenInscription }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 xl:gap-8 items-stretch pt-6 lg:pt-0">
           
           {/* Left Box: Activities list (Frame 108) */}
-          <div className="lg:col-span-5 bg-[#FFF5E3] text-[#193764] rounded-[36px] p-6 sm:p-7 border border-orange-200/60 shadow-xl space-y-4 flex flex-col justify-between">
+          <div className="lg:col-span-5 bg-white text-[#193764] rounded-[36px] p-6 sm:p-7 border border-orange-200/60 shadow-xl space-y-4 flex flex-col justify-between">
             
             <div>
               {/* Day title & arrows */}
@@ -575,7 +575,7 @@ export default function InteractiveSchedule({ onOpenInscription }) {
             <img
               src="/assets/merch-degradado.png"
               alt="Merch exclusivo Podés Contar: tote bag, remera, termo y llaveros de Fausti"
-              className="w-full max-w-[340px] sm:max-w-[440px] md:max-w-none md:w-[440px] lg:w-[560px] xl:w-[620px] h-auto object-contain object-left-bottom rounded-bl-[50px]"
+              className="w-full max-w-[380px] sm:max-w-[480px] md:max-w-none md:w-[500px] lg:w-[640px] xl:w-[700px] h-auto object-contain object-left-bottom rounded-bl-[50px]"
             />
           </div>
 
@@ -589,7 +589,7 @@ export default function InteractiveSchedule({ onOpenInscription }) {
                 className="h-10 sm:h-12 w-auto object-contain select-none mt-1"
               />
               <h3 className="text-2xl sm:text-[34px] lg:text-[36px] font-extrabold text-[#FFF5E3] leading-[1.12]">
-                Anotáte en
+                Participá en
                 <br />
                 nuestras actividades
               </h3>
@@ -601,12 +601,12 @@ export default function InteractiveSchedule({ onOpenInscription }) {
               />
             </div>
 
-            <p className="mt-2.5 text-lg sm:text-[22px] lg:text-[24px] font-medium text-[#FFF5E3] leading-snug">
-              ¡Y participá por increíbles premios!
+            <p className="mt-2.5 text-lg sm:text-[21px] lg:text-[23px] font-medium text-[#FFF5E3] leading-snug">
+              Retirá tu pasaporte del evento en el centro de estudiantes, anotáte a las actividades y ¡participá por increíbles premios!
             </p>
 
             <p className="mt-2 text-sm sm:text-[17px] lg:text-[18px] text-[#FFF5E3]/95 font-normal leading-snug max-w-[522px] mx-auto md:mx-0">
-              Se estará sorteando un Kit de Fausti con: un termo, una remera a elección, un set de stickers, dos llaveros y una totebag de Fausti.
+              Estaremos sorteando vouchers de comida, termos, remeras, stickers, llaveros, audifonos y ¡mucho más!
             </p>
 
             {/* Bastón naranja inclinado pasando por detrás del merch (z-10 < z-20), con mayor separación del texto superior */}

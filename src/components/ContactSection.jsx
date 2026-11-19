@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SearchPill from './SearchPill';
-import { Send, CheckCircle2, Clock, MapPin } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function ContactSection() {
@@ -56,14 +56,14 @@ export default function ContactSection() {
 
               <div className="p-4 rounded-2xl bg-[#FFF5EC] border border-orange-200/50 space-y-2">
                 <div className="flex items-center gap-2 text-[#484848] font-bold text-sm">
-                  <Clock className="w-4 h-4 text-brand-orange" />
+                  <img src="/assets/ico-hora.png" alt="" aria-hidden="true" className="w-4 h-4 object-contain shrink-0" />
                   <span>Horarios de atención</span>
                 </div>
                 <p className="text-sm sm:text-base font-extrabold text-[#484848]">
                   Lunes a Viernes: 9:00 a 12:00 hs y de 17:00 a 20:00 hs
                 </p>
                 <div className="flex items-center gap-1.5 text-xs text-[#484848]/80 pt-1">
-                  <MapPin className="w-3.5 h-3.5 text-brand-orange shrink-0" />
+                  <img src="/assets/ico-ubicacion.png" alt="" aria-hidden="true" className="w-3.5 h-3.5 object-contain shrink-0" />
                   <span>Campus Resistencia - Av. Las Heras 727, H3500 Resistencia, Chaco</span>
                 </div>
               </div>
@@ -83,7 +83,7 @@ export default function ContactSection() {
                 className="absolute inset-0 bg-brand-blue/30 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-bold text-sm backdrop-blur-xs transition-opacity duration-200"
               >
                 <span className="bg-brand-blue px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-brand-orange" />
+                  <img src="/assets/ico-ubicacion.png" alt="" aria-hidden="true" className="w-4 h-4 object-contain brightness-0 invert" />
                   Abrir en Google Maps
                 </span>
               </a>
@@ -182,7 +182,7 @@ export default function ContactSection() {
                       className="bg-brand-orange hover:bg-brand-blue text-white px-9 py-3 rounded-full font-black text-base shadow-btn hover:shadow-btn-hover active:scale-95 transition-all flex items-center gap-2"
                     >
                       <span>{loading ? 'Enviando...' : 'Enviar'}</span>
-                      <Send className="w-4 h-4" />
+                      <img src="/assets/ico-enviar.png" alt="" aria-hidden="true" className="w-4 h-4 object-contain brightness-0 invert" />
                     </button>
                   </div>
 

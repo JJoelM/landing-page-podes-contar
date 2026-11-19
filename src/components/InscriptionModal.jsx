@@ -9,7 +9,6 @@ export default function InscriptionModal({ isOpen, onClose, defaultActivity = ''
     career: 'Arquitectura',
     email: '',
     phone: '',
-    participateDraw: true,
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -175,19 +174,6 @@ export default function InscriptionModal({ isOpen, onClose, defaultActivity = ''
                   />
                 </div>
               </div>
-
-              {/* Sorteo checkbox */}
-              <label className="flex items-center gap-2 pt-1 cursor-pointer select-none">
-                <input
-                  type="checkbox"
-                  checked={formData.participateDraw}
-                  onChange={(e) => setFormData({ ...formData, participateDraw: e.target.checked })}
-                  className="w-4 h-4 text-brand-orange rounded border-orange-300 focus:ring-brand-orange accent-brand-orange"
-                />
-                <span className="text-xs font-bold text-[#193764]/85">
-                  Deseo participar en el sorteo de premios de las jornadas
-                </span>
-              </label>
 
               {/* Submit Button */}
               <div className="pt-3">

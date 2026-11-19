@@ -38,22 +38,23 @@ export default function Navbar({ onOpenInscription }) {
             ))}
           </nav>
 
-          <button
-            onClick={() => onOpenInscription()}
+          <a
+            href="#cronograma"
             className="bg-brand-orange hover:bg-brand-blue text-[#FFF5E3] px-7 py-2.5 rounded-full font-bold text-base shadow-btn hover:shadow-btn-hover active:scale-95 transition-all duration-200 whitespace-nowrap"
           >
             Inscribirme
-          </button>
+          </a>
         </div>
 
         {/* Mobile menu button */}
         <div className="flex md:hidden items-center gap-3">
-          <button
-            onClick={() => onOpenInscription()}
+          <a
+            href="#cronograma"
+            onClick={() => setMobileMenuOpen(false)}
             className="bg-brand-orange text-white px-4 py-1.5 rounded-full font-bold text-sm shadow-sm"
           >
             Inscribirme
-          </button>
+          </a>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 text-brand-blue hover:text-brand-orange"

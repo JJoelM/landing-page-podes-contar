@@ -50,29 +50,29 @@ export default function FeaturedActivities({ onOpenInscription }) {
             </div>
 
             {/* Bastón azul #0660AE + Título “Detrás del chiste” en un único contenedor rotado (z-10 detrás de Sofía z-20) */}
-            <div className="absolute right-4 sm:right-6 top-[166px] sm:top-[158px] z-10 -rotate-[4.73deg] origin-right">
+            <div className="relative sm:absolute sm:right-6 top-0 sm:top-[158px] mt-6 sm:mt-0 pl-7 sm:pl-0 z-10 -rotate-[4.73deg] sm:origin-right origin-left">
               <div className="relative inline-flex items-center">
                 <div
-                  className="absolute inset-y-0 right-0 -left-[90px] sm:-left-[110px] bg-[#0660AE] rounded-[30px] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] -z-10"
+                  className="absolute inset-y-0 right-0 -left-16 sm:-left-[110px] bg-[#0660AE] rounded-[30px] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] -z-10"
                   aria-hidden="true"
                 />
-                <span className="text-[#FFF5E3] text-xl sm:text-2xl xl:text-[28px] 2xl:text-[30px] font-bold leading-none whitespace-nowrap py-2.5 pl-3 pr-5">
+                <span className="text-[#FFF5E3] text-2xl sm:text-2xl xl:text-[28px] 2xl:text-[30px] font-bold leading-none whitespace-nowrap py-2.5 pl-3 pr-5">
                   “{sofia.title}”
                 </span>
               </div>
             </div>
 
-            {/* Imagen de Sofía Calvoe (z-20 encima del bastón z-10, exacto a Frame 146 2531:16804) */}
-            <div className="absolute left-0 bottom-0 w-[55%] sm:w-[56.1%] h-[82%] sm:h-[86.4%] pointer-events-none z-20 overflow-hidden rounded-bl-[50px]">
+            {/* Imagen de Sofía Calvoe: oculta en móvil, visible desde sm sin deformar relación de aspecto */}
+            <div className="hidden sm:block absolute left-0 bottom-0 w-[56.1%] h-[86.4%] pointer-events-none z-20 overflow-hidden rounded-bl-[50px]">
               <img
                 src={sofia.image}
                 alt="Sofía Calvoe"
-                className="absolute h-full left-[-28.69%] top-0 w-[128.71%] max-w-none select-none"
+                className="w-full h-full object-cover object-top select-none"
               />
             </div>
 
-            {/* Textos a la derecha: descripción, Disertante y Modalidad (z-30, left-[50.5%]) */}
-            <div className="absolute left-[49%] sm:left-[50.5%] right-5 sm:right-[30px] top-[248px] sm:top-[258px] z-30 text-left">
+            {/* Textos a la derecha (ancho completo en móvil al ocultarse la imagen) */}
+            <div className="relative sm:absolute left-0 sm:left-[50.5%] right-0 sm:right-[30px] top-0 sm:top-[258px] px-7 sm:px-0 mt-8 sm:mt-0 pb-28 sm:pb-0 z-30 text-left">
               <p className="text-sm sm:text-[16px] text-[#193764] leading-[1.35]">
                 <span className="font-bold">El acoso disfrazado de crítica: </span>
                 <span className="font-normal">el feedback académico frente a la burla, la difamación y hostigamiento.</span>

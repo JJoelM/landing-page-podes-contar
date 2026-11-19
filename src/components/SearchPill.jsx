@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Mic, Camera } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 export default function SearchPill({ text, onSearch, placeholder, className = '' }) {
   return (
@@ -16,13 +16,12 @@ export default function SearchPill({ text, onSearch, placeholder, className = ''
           readOnly={!onSearch}
           className="w-full bg-transparent text-[#484848] text-base md:text-lg font-bold placeholder-[#484848]/80 outline-none cursor-default"
         />
-        <div className="flex items-center gap-2 text-brand-blue/70 shrink-0">
-          <button type="button" aria-label="Búsqueda por voz" className="p-1 hover:text-brand-orange transition-colors">
-            <Mic className="w-4 h-4" />
-          </button>
-          <button type="button" aria-label="Búsqueda visual" className="p-1 hover:text-brand-orange transition-colors">
-            <Camera className="w-4 h-4" />
-          </button>
+        <div className="flex items-center shrink-0 pr-1">
+          <img
+            src="/assets/ico-barra busqueda.png"
+            alt="Búsqueda por voz y visual"
+            className="h-5 w-auto object-contain select-none"
+          />
         </div>
       </div>
     </div>

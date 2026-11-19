@@ -46,9 +46,9 @@ export default function Hero({ onOpenInscription }) {
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#193764] tracking-tight leading-[1.15] max-w-2xl mx-auto">
           Jornada de{' '}
           <HeadingHighlight
-            color="#193764"
-            bgColor="#FEEBC8"
-            textColor="text-[#193764]"
+            color="#F38739"
+            bgColor="bg-orange-200/60"
+            textColor="text-[#F38739]"
           >
             concientización
           </HeadingHighlight>{' '}
@@ -78,28 +78,11 @@ export default function Hero({ onOpenInscription }) {
               <span className="text-sm sm:text-base font-black text-[#193764] mt-1.5 block">Actividades</span>
             </div>
           </div>
-
-          {/* "Podés venir, podés contar." centrado en la página y globo diálogo.svg a su izquierda */}
-          <div className="mt-5 flex justify-center pointer-events-none select-none">
-            <div className="relative inline-flex items-center justify-center">
-              <img
-                src="/assets/globo-dialogo.svg"
-                alt=""
-                aria-hidden="true"
-                className="absolute right-full mr-3 sm:mr-4 top-1/2 -translate-y-1/2 w-24 sm:w-44 md:w-48 h-auto object-contain"
-              />
-              <span className="font-handwriting text-2xl sm:text-3xl text-[#193764] font-normal leading-tight text-center whitespace-nowrap">
-                Podés venir,
-                <br />
-                podés contar.
-              </span>
-            </div>
-          </div>
         </div>
 
       </div>
 
-      {/* Fausti en puff a la IZQUIERDA (doble de tamaño en escritorio, igualando el tamaño del puff derecho) */}
+      {/* Fausti en puff a la IZQUIERDA */}
       <div className="absolute -left-1 sm:-left-5 lg:-left-9 bottom-0 z-0 pointer-events-none select-none">
         <div className="relative w-44 sm:w-72 md:w-88 lg:w-[500px] xl:w-[560px] max-w-none">
           <img
@@ -110,8 +93,8 @@ export default function Hero({ onOpenInscription }) {
         </div>
       </div>
 
-      {/* Puff vacío a la DERECHA (triple de tamaño en escritorio, coincidiendo con el puff de Fausti) */}
-      <div className="absolute -right-5 sm:-right-9 lg:-right-11 bottom-0 z-0 pointer-events-none select-none">
+      {/* Puff vacío a la DERECHA (bajado ~20px para alinear las bases) */}
+      <div className="absolute -right-5 sm:-right-9 lg:-right-11 -bottom-5 z-0 pointer-events-none select-none">
         <div className="relative w-48 sm:w-80 md:w-96 lg:w-[560px] xl:w-[640px] max-w-none">
           <img
             src="/assets/puff.png"

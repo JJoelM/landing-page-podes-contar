@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import SearchPill from './SearchPill';
+import TestimonialModal from './TestimonialModal';
 import { testimonials } from '../data/testimonials';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function TestimonialsSection() {
   const [activeIndex, setActiveIndex] = useState(1);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const prevSlide = () => {
     setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
@@ -160,9 +162,25 @@ export default function TestimonialsSection() {
             ))}
           </div>
 
+          {/* CTA Dar mi testimonio */}
+          <div className="mt-8 flex justify-center relative z-20">
+            <button
+              type="button"
+              onClick={() => setModalOpen(true)}
+              className="bg-[#193764] hover:bg-[#FFF5E3] text-[#FFF5E3] hover:text-[#193764] px-8 py-3 rounded-full font-black text-base shadow-[0_8px_20px_rgba(2,40,72,0.35)] active:scale-95 transition-all duration-200 cursor-pointer"
+            >
+              Dar mi testimonio
+            </button>
+          </div>
+
         </div>
 
       </div>
+
+      <TestimonialModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+      />
     </section>
   );
 }

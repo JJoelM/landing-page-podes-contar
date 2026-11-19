@@ -1,5 +1,4 @@
 import React from 'react';
-import { Mail, Phone } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -71,11 +70,11 @@ export default function Footer() {
                   href="mailto:secretariaestudiantil.fauunne@gmail.com"
                   className="text-white/80 hover:text-brand-orange transition-colors flex items-center gap-1.5 mt-0.5"
                 >
-                  <Mail className="w-3.5 h-3.5 shrink-0 text-brand-orange" />
+                  <img src="/assets/ico-correo.png" alt="" aria-hidden="true" className="w-3.5 h-3.5 shrink-0 object-contain brightness-0 invert" />
                   secretariaestudiantil.fauunne@gmail.com
                 </a>
                 <span className="text-white/70 flex items-center gap-1.5 mt-0.5">
-                  <Phone className="w-3.5 h-3.5 shrink-0 text-brand-orange" />
+                  <img src="/assets/ico-telefono.png" alt="" aria-hidden="true" className="w-3.5 h-3.5 shrink-0 object-contain brightness-0 invert" />
                   Tel: 3624-753225
                 </span>
               </div>
@@ -86,7 +85,7 @@ export default function Footer() {
                   href="mailto:sistemadetutoriasfau@gmail.com"
                   className="text-white/80 hover:text-brand-orange transition-colors flex items-center gap-1.5 mt-0.5"
                 >
-                  <Mail className="w-3.5 h-3.5 shrink-0 text-brand-orange" />
+                  <img src="/assets/ico-correo.png" alt="" aria-hidden="true" className="w-3.5 h-3.5 shrink-0 object-contain brightness-0 invert" />
                   sistemadetutoriasfau@gmail.com
                 </a>
               </div>
@@ -97,7 +96,7 @@ export default function Footer() {
                   href="mailto:protocolofau@arq.unne.edu.ar"
                   className="text-white/80 hover:text-brand-orange transition-colors flex items-center gap-1.5 mt-0.5"
                 >
-                  <Mail className="w-3.5 h-3.5 shrink-0 text-brand-orange" />
+                  <img src="/assets/ico-correo.png" alt="" aria-hidden="true" className="w-3.5 h-3.5 shrink-0 object-contain brightness-0 invert" />
                   protocolofau@arq.unne.edu.ar
                 </a>
               </div>
