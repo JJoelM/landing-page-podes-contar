@@ -48,9 +48,9 @@ export default function AboutSection() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#193764] tracking-tight leading-tight">
               Una red universitaria{' '}
               <HeadingHighlight
-                color="#F38739"
-                bgColor="bg-orange-200/60"
-                textColor="text-[#F38739]"
+                color="#193764"
+                bgColor="#FEEBC8"
+                textColor="text-[#193764]"
               >
                 libre de acoso
               </HeadingHighlight>

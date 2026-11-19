@@ -3,13 +3,13 @@ import HeadingHighlight from './HeadingHighlight';
 
 export default function Hero({ onOpenInscription }) {
   return (
-    <section className="relative pt-6 sm:pt-10 pb-48 sm:pb-36 lg:pb-32 overflow-hidden bg-[#FEF6EE]">
+    <section className="relative pt-6 sm:pt-10 pb-8 xl:pb-32 overflow-hidden bg-[#FEF6EE]">
       
       {/* Background soft ambient warm glow */}
       <div className="absolute top-10 left-1/2 transform -translate-x-1/2 w-[600px] h-[600px] bg-orange-200/20 rounded-full blur-3xl pointer-events-none -z-10" />
 
       {/* Main Container - Centered Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 space-y-7">
+      <div className="max-w-xl mx-auto px-4 sm:px-6 text-center relative z-10 space-y-7">
         
         {/* Top Campaign Sub-brand con logo apaisado */}
         <div className="flex flex-col items-center justify-center select-none mb-1">
@@ -46,9 +46,9 @@ export default function Hero({ onOpenInscription }) {
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#193764] tracking-tight leading-[1.15] max-w-2xl mx-auto">
           Jornada de{' '}
           <HeadingHighlight
-            color="#F38739"
-            bgColor="bg-orange-200/60"
-            textColor="text-[#F38739]"
+            color="#193764"
+            bgColor="#FEEBC8"
+            textColor="text-[#193764]"
           >
             concientización
           </HeadingHighlight>{' '}
@@ -82,9 +82,27 @@ export default function Hero({ onOpenInscription }) {
 
       </div>
 
-      {/* Fausti en puff a la IZQUIERDA */}
-      <div className="absolute -left-1 sm:-left-5 lg:-left-9 bottom-0 z-0 pointer-events-none select-none">
-        <div className="relative w-44 sm:w-72 md:w-88 lg:w-[500px] xl:w-[560px] max-w-none">
+      {/* Puffs en <xl (móvil, tablet y 1024px): en flujo normal debajo del texto, centrados y separados de los bordes sin pisar nunca el texto */}
+      <div className="xl:hidden mt-6 px-4 sm:px-10 flex items-end justify-center gap-4 sm:gap-10 pointer-events-none select-none">
+        <div className="w-[44%] max-w-[260px] sm:max-w-[300px]">
+          <img
+            src="/assets/fausti-puff.png"
+            alt="Fausti sentado en un puff naranja"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+        <div className="w-[44%] max-w-[260px] sm:max-w-[300px] translate-y-2 sm:translate-y-3">
+          <img
+            src="/assets/puff.png"
+            alt="Puff naranja"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+      </div>
+
+      {/* Fausti en puff a la IZQUIERDA en xl+ (separado del borde y sin superponerse al texto max-w-xl) */}
+      <div className="hidden xl:block absolute left-6 2xl:left-14 bottom-0 z-0 pointer-events-none select-none">
+        <div className="relative w-[300px] 2xl:w-[390px]">
           <img
             src="/assets/fausti-puff.png"
             alt="Fausti sentado en un puff naranja"
@@ -93,9 +111,9 @@ export default function Hero({ onOpenInscription }) {
         </div>
       </div>
 
-      {/* Puff vacío a la DERECHA (bajado ~20px para alinear las bases) */}
-      <div className="absolute -right-5 sm:-right-9 lg:-right-11 -bottom-5 z-0 pointer-events-none select-none">
-        <div className="relative w-48 sm:w-80 md:w-96 lg:w-[560px] xl:w-[640px] max-w-none">
+      {/* Puff vacío a la DERECHA en xl+ (simétrico al izquierdo, separado del borde y sin superponerse al texto) */}
+      <div className="hidden xl:block absolute right-6 2xl:right-14 -bottom-4 z-0 pointer-events-none select-none">
+        <div className="relative w-[300px] 2xl:w-[390px]">
           <img
             src="/assets/puff.png"
             alt="Puff naranja"

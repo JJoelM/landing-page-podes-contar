@@ -116,9 +116,9 @@ export default function InteractiveSchedule({ onOpenInscription }) {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#FFF5E3] tracking-tight leading-tight">
             Jornada de{' '}
             <HeadingHighlight
-              color="#0660AE"
-              bgColor="#0660AE"
-              textColor="text-[#FFF5E3]"
+              color="#193764"
+              bgColor="#FEEBC8"
+              textColor="text-[#193764]"
             >
               concientización
             </HeadingHighlight>{' '}
