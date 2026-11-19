@@ -562,7 +562,7 @@ export default function InteractiveSchedule({ onOpenInscription }) {
         </div>
 
         {/* Merch / Sorteo Banner (1:1 con Frame 152 de Figma) */}
-        <div className="mt-14 sm:mt-16 bg-[#0660AE] text-[#FFF5E3] rounded-[50px] px-6 sm:px-10 md:pl-0 md:pr-10 py-8 sm:py-0 sm:min-h-[388px] shadow-[0_5px_20px_5px_rgba(0,0,0,0.25)] relative overflow-visible flex flex-col md:flex-row items-center">
+        <div className="mt-14 sm:mt-16 bg-[#0660AE] text-[#FFF5E3] rounded-[50px] px-6 sm:px-10 lg:pl-0 lg:pr-10 py-8 lg:py-0 lg:min-h-[388px] shadow-[0_5px_20px_5px_rgba(0,0,0,0.25)] relative overflow-hidden flex flex-col lg:flex-row items-center">
           <img
             src="/assets/brillos-esquina.png"
             alt=""
@@ -570,18 +570,18 @@ export default function InteractiveSchedule({ onOpenInscription }) {
             className="hidden sm:block absolute top-8 right-10 w-12 h-12 object-contain pointer-events-none select-none z-20"
           />
 
-          {/* Merch visual pegado al borde izquierdo e inferior del contenedor (sin márgenes, z-20) */}
-          <div className="w-full md:w-auto md:absolute md:left-0 md:bottom-0 flex justify-center md:justify-start relative z-20 -mt-14 sm:-mt-16 md:mt-0 pointer-events-none select-none">
+          {/* Merch visual: centrado arriba en <lg, y a la izquierda en lg+ sin pisar el texto (manteniendo exacto xl/1440p) */}
+          <div className="w-full lg:w-auto lg:absolute lg:-left-4 lg:top-1/2 lg:-translate-y-1/2 lg:mt-10 xl:mt-24 flex justify-center lg:justify-start relative z-20 pointer-events-none select-none">
             <img
               src="/assets/merch-degradado.png"
               alt="Merch exclusivo Podés Contar: tote bag, remera, termo y llaveros de Fausti"
-              className="w-full max-w-[380px] sm:max-w-[480px] md:max-w-none md:w-[500px] lg:w-[640px] xl:w-[700px] h-auto object-contain object-left-bottom rounded-bl-[50px]"
+              className="w-full max-w-[360px] sm:max-w-[440px] lg:max-w-none lg:w-[560px] xl:w-[765px] h-auto object-contain"
             />
           </div>
 
           {/* Copy & Bastón naranja a la derecha */}
-          <div className="md:ml-auto md:w-[54%] lg:w-[52%] text-center md:text-left relative z-10 mt-4 md:mt-0 md:py-10 md:pr-4">
-            <div className="inline-flex items-start justify-center md:justify-start gap-2.5">
+          <div className="w-full lg:ml-auto lg:w-[52%] text-center lg:text-left relative z-10 mt-4 lg:mt-0 lg:py-10 lg:pr-4">
+            <div className="inline-flex items-start justify-center lg:justify-start gap-2.5">
               <img
                 src="/assets/exclamacion-abierta.png"
                 alt=""
@@ -605,21 +605,21 @@ export default function InteractiveSchedule({ onOpenInscription }) {
               Retirá tu pasaporte del evento en el centro de estudiantes, anotáte a las actividades y ¡participá por increíbles premios!
             </p>
 
-            <p className="mt-2 text-sm sm:text-[17px] lg:text-[18px] text-[#FFF5E3]/95 font-normal leading-snug max-w-[522px] mx-auto md:mx-0">
+            <p className="mt-2 text-sm sm:text-[17px] lg:text-[18px] text-[#FFF5E3]/95 font-normal leading-snug max-w-[522px] mx-auto lg:mx-0">
               Estaremos sorteando vouchers de comida, termos, remeras, stickers, llaveros, audifonos y ¡mucho más!
             </p>
 
             {/* Bastón naranja inclinado pasando por detrás del merch (z-10 < z-20), con mayor separación del texto superior */}
-            <div className="mt-10 sm:mt-12 flex items-center justify-center md:justify-start">
+            <div className="mt-10 sm:mt-12 flex items-center justify-center lg:justify-start">
               <div className="relative inline-flex items-center -rotate-[1.9deg] origin-left select-none">
                 <div
-                  className="hidden md:block absolute inset-y-0 right-0 -left-56 bg-[#F38739] rounded-[50px] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] -z-10"
+                  className="hidden lg:block absolute inset-y-0 right-0 -left-24 xl:-left-56 bg-[#F38739] rounded-[50px] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] -z-10"
                   aria-hidden="true"
                 />
-                <span className="md:hidden bg-[#F38739] rounded-[50px] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-[#FFF5E3] font-extrabold text-base sm:text-xl px-6 py-3">
+                <span className="lg:hidden bg-[#F38739] rounded-[50px] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-[#FFF5E3] font-extrabold text-base sm:text-xl px-6 py-3">
                   Sorteo el día Viernes 5 de noviembre
                 </span>
-                <span className="hidden md:block text-[#FFF5E3] font-extrabold text-xl lg:text-[24px] xl:text-[26px] leading-none whitespace-nowrap py-4 pl-2 pr-8">
+                <span className="hidden lg:block text-[#FFF5E3] font-extrabold text-lg xl:text-[26px] leading-none whitespace-nowrap py-4 pl-2 pr-8">
                   Sorteo el día Viernes 5 de noviembre
                 </span>
                 <img
