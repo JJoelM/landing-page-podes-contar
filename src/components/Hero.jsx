@@ -91,7 +91,7 @@ export default function Hero({ onOpenInscription }) {
             className="w-full h-auto object-contain"
           />
         </div>
-        <div className="w-[44%] max-w-[260px] sm:max-w-[300px] translate-y-2 sm:translate-y-3">
+        <div className="w-[44%] max-w-[260px] sm:max-w-[300px]">
           <img
             src="/assets/puff.png"
             alt="Puff naranja"
@@ -111,8 +111,8 @@ export default function Hero({ onOpenInscription }) {
         </div>
       </div>
 
-      {/* Puff vacío a la DERECHA en xl+ (simétrico al izquierdo, separado del borde y sin superponerse al texto) */}
-      <div className="hidden xl:block absolute right-6 2xl:right-14 -bottom-4 z-0 pointer-events-none select-none">
+      {/* Puff vacío a la DERECHA en xl+ (simétrico al izquierdo, mismo lienzo y misma base) */}
+      <div className="hidden xl:block absolute right-6 2xl:right-14 bottom-0 z-0 pointer-events-none select-none">
         <div className="relative w-[300px] 2xl:w-[390px]">
           <img
             src="/assets/puff.png"
