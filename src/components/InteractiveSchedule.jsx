@@ -488,10 +488,10 @@ export default function InteractiveSchedule({ onOpenInscription }) {
               )}
             </div>
 
-            {/* Imagen(es) del disertante a la IZQUIERDA (top ~72-80px para cruzar siempre por delante del bastón azul z-10) */}
+            {/* Imagen(es) del disertante a la IZQUIERDA (ancladas por altura para llegar siempre a top ~72-81px y cortar el bastón azul z-10) */}
             {activeActivity.imageVariant === 'mentoras' ? (
-              /* Frame 157: Composición unificada de ambas disertantes (232x355, top 72px hasta bottom 0) */
-              <div className="hidden sm:block absolute left-0 top-[72px] bottom-0 w-[31.6%] pointer-events-none z-20 overflow-hidden rounded-bl-[49px]">
+              /* Frame 157: Composición unificada de ambas disertantes (aspect 232/355, sin deformar ni separarse) */
+              <div className="hidden sm:block absolute left-0 bottom-0 h-[83.1%] aspect-[232/355] pointer-events-none z-20 overflow-hidden rounded-bl-[49px]">
                 <img
                   src="/assets/mentoras-composicion.png"
                   alt="Lucía Cochia y Cintia Slobodiuk"
@@ -499,8 +499,8 @@ export default function InteractiveSchedule({ onOpenInscription }) {
                 />
               </div>
             ) : activeActivity.imageVariant === 'puffs' ? (
-              /* Frame 158: Encuentro de puffs (top 80px hasta bottom 0, esquina curva 105px cortando el bastón azul) */
-              <div className="hidden sm:block absolute left-0 top-[80px] bottom-0 w-[26.4%] pointer-events-none z-20 overflow-hidden rounded-bl-[50px] rounded-tr-[105px]">
+              /* Frame 158: Encuentro de puffs (aspect 194/347, esquina curva 105px cortando el bastón azul) */
+              <div className="hidden sm:block absolute left-0 bottom-0 h-[81.3%] aspect-[194/347] pointer-events-none z-20 overflow-hidden rounded-bl-[50px] rounded-tr-[105px]">
                 <img
                   src="/assets/puffs-encuentro.png"
                   alt={Array.isArray(activeActivity.speaker) ? activeActivity.speaker.join(' y ') : activeActivity.speaker}
@@ -508,8 +508,8 @@ export default function InteractiveSchedule({ onOpenInscription }) {
                 />
               </div>
             ) : (
-              /* Frame 147: Sofía Calvoe (top 76px hasta bottom 0, cabeza cortando el bastón azul) */
-              <div className="hidden sm:block absolute left-0 top-[76px] bottom-0 w-[27%] pointer-events-none z-20 overflow-hidden rounded-bl-[49px] rounded-tl-[49px] rounded-tr-[49px]">
+              /* Frame 147: Sofía Calvoe (aspect 198/351, cabeza cortando el bastón azul) */
+              <div className="hidden sm:block absolute left-0 bottom-0 h-[82.2%] aspect-[198/351] pointer-events-none z-20 overflow-hidden rounded-bl-[49px] rounded-tl-[49px] rounded-tr-[49px]">
                 <img
                   src={activeActivity.image || '/assets/sofia-calvoe.png'}
                   alt={Array.isArray(activeActivity.speaker) ? activeActivity.speaker.join(' y ') : activeActivity.speaker}
@@ -519,10 +519,20 @@ export default function InteractiveSchedule({ onOpenInscription }) {
             )}
 
             {/* Bastón azul #0660AE + Título (z-10 detrás de las imágenes z-20 para generar el corte exacto de Figma) */}
-            <div className="relative sm:absolute sm:left-[30%] sm:top-[95px] z-10 my-2 sm:my-0 -rotate-[3.45deg] origin-left">
+            <div
+              className={`relative sm:top-[96px] z-10 my-2 sm:my-0 -rotate-[3.45deg] origin-left sm:absolute ${
+                activeActivity.imageVariant === 'mentoras' || activeActivity.imageVariant === 'puffs'
+                  ? 'sm:left-[238px]'
+                  : 'sm:left-[223px]'
+              }`}
+            >
               <div className="relative inline-flex items-center">
                 <div
-                  className="absolute inset-y-0 right-0 -left-[140px] sm:-left-[180px] bg-[#0660AE] rounded-[30px] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] -z-10"
+                  className={`absolute inset-y-0 right-0 bg-[#0660AE] rounded-[30px] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] -z-10 ${
+                    activeActivity.imageVariant === 'mentoras' || activeActivity.imageVariant === 'puffs'
+                      ? '-left-[180px]'
+                      : '-left-[165px]'
+                  }`}
                   aria-hidden="true"
                 />
                 <span className="text-[#FFF5E3] text-2xl sm:text-[26px] xl:text-[32px] font-bold leading-none whitespace-nowrap py-2.5 pl-3 pr-7">
@@ -532,7 +542,7 @@ export default function InteractiveSchedule({ onOpenInscription }) {
             </div>
 
             {/* A la DERECHA: Textos, Disertante, Modalidad, Fecha/Hora/Lugar y Botón */}
-            <div className="relative z-30 sm:pl-[33%] sm:pr-[42px] pt-3 sm:pt-[122px] sm:pb-[34px] flex-1 flex flex-col justify-between text-left">
+            <div className="relative z-30 sm:pl-[246px] sm:pr-[42px] pt-3 sm:pt-[122px] sm:pb-[34px] flex-1 flex flex-col justify-between text-left">
               <div className="space-y-3">
                 <p className="text-sm sm:text-[17px] font-medium text-[#193764] leading-snug max-w-[449px]">
                   {activeActivity.subtitle}
