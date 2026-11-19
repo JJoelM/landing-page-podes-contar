@@ -275,7 +275,9 @@ export default function InteractiveSchedule({ onOpenInscription }) {
                                         </p>
                                         <div className="text-[11px] font-bold border-t border-white/15 pt-1.5">
                                           <span className="text-[#FFF5E3]/75">Disertante: </span>
-                                          <span className="text-[#F38739]">{item.speaker}</span>
+                                          <span className="text-[#F38739]">
+                                            {Array.isArray(item.speaker) ? item.speaker.join(' / ') : item.speaker}
+                                          </span>
                                         </div>
 
                                         <div
@@ -454,11 +456,11 @@ export default function InteractiveSchedule({ onOpenInscription }) {
 
           </div>
 
-          {/* Right Box: Full Activity Detail Card (1:1 con Frame 147 de Figma) */}
+          {/* Right Box: Full Activity Detail Card (1:1 con Frame 147, Frame 157 y Frame 158 de Figma) */}
           <div className="lg:col-span-7 bg-[#FFF5E3] text-[#193764] rounded-[50px] p-6 sm:p-0 shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] relative overflow-hidden flex flex-col justify-between min-h-[427px]">
 
-            {/* Degradado 3 9 detrás del disertante: exacto a Frame 147 (2679:16955) */}
-            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-[44.7%] overflow-hidden rounded-[49px] z-0" aria-hidden="true">
+            {/* Degradado 3 9 detrás del disertante: exacto a Figma (w=328/734, h=426/427) */}
+            <div className="pointer-events-none absolute left-0 top-px bottom-0 w-[44.69%] overflow-hidden rounded-[49px] z-0" aria-hidden="true">
               <img
                 src="/assets/degradado-claro.png"
                 alt=""
@@ -466,68 +468,97 @@ export default function InteractiveSchedule({ onOpenInscription }) {
               />
             </div>
 
-            {/* Top Row: Categoría a la izquierda + badge a la derecha */}
+            {/* Top Row: Categoría a la izquierda + badge estrella a la derecha */}
             <div className="relative z-30 flex items-center justify-between sm:pt-[33px] sm:pl-[43px] sm:pr-[38px] mb-3 sm:mb-0">
               <div className="flex items-center gap-2.5">
                 <CategoryIcon
                   type={activeActivity.category}
                   variant="card"
-                  className="w-8 h-8 sm:w-9 sm:h-[33px] shrink-0"
+                  className="w-8 h-8 sm:w-[33px] sm:h-[33px] shrink-0"
                   color="#F38739"
                 />
-                <span className="font-bold text-sm text-[#F38739]">
+                <span className="font-bold text-[14px] text-[#F38739]">
                   {activeActivity.categoryLabel}
                 </span>
               </div>
               {activeActivity.isStarred && (
-                <span className="text-[#F38739] font-bold text-lg sm:text-2xl leading-none">
-                  ¡Invitada estrella!
+                <span className="text-[#F38739] font-bold text-lg sm:text-[24px] leading-none">
+                  {activeActivity.starredLabel || '¡Invitada estrella!'}
                 </span>
               )}
             </div>
 
-            {/* Imagen del disertante (z-20, sin deformar relación de aspecto) */}
-            <div className="hidden sm:block absolute left-0 bottom-0 w-[27%] h-[82.2%] pointer-events-none z-20 overflow-hidden rounded-bl-[49px]">
-              <img
-                src={activeActivity.image || '/assets/sofia-calvoe.png'}
-                alt={activeActivity.speaker}
-                className="w-full h-full object-cover object-top select-none"
-              />
-            </div>
+            {/* Imagen(es) del disertante a la IZQUIERDA (top ~72-80px para cruzar siempre por delante del bastón azul z-10) */}
+            {activeActivity.imageVariant === 'mentoras' ? (
+              /* Frame 157: Composición unificada de ambas disertantes (232x355, top 72px hasta bottom 0) */
+              <div className="hidden sm:block absolute left-0 top-[72px] bottom-0 w-[31.6%] pointer-events-none z-20 overflow-hidden rounded-bl-[49px]">
+                <img
+                  src="/assets/mentoras-composicion.png"
+                  alt="Lucía Cochia y Cintia Slobodiuk"
+                  className="w-full h-full object-contain object-left-bottom select-none"
+                />
+              </div>
+            ) : activeActivity.imageVariant === 'puffs' ? (
+              /* Frame 158: Encuentro de puffs (top 80px hasta bottom 0, esquina curva 105px cortando el bastón azul) */
+              <div className="hidden sm:block absolute left-0 top-[80px] bottom-0 w-[26.4%] pointer-events-none z-20 overflow-hidden rounded-bl-[50px] rounded-tr-[105px]">
+                <img
+                  src="/assets/puffs-encuentro.png"
+                  alt={Array.isArray(activeActivity.speaker) ? activeActivity.speaker.join(' y ') : activeActivity.speaker}
+                  className="absolute h-[146.79%] w-auto left-[-174.29%] top-[-30.34%] max-w-none select-none"
+                />
+              </div>
+            ) : (
+              /* Frame 147: Sofía Calvoe (top 76px hasta bottom 0, cabeza cortando el bastón azul) */
+              <div className="hidden sm:block absolute left-0 top-[76px] bottom-0 w-[27%] pointer-events-none z-20 overflow-hidden rounded-bl-[49px] rounded-tl-[49px] rounded-tr-[49px]">
+                <img
+                  src={activeActivity.image || '/assets/sofia-calvoe.png'}
+                  alt={Array.isArray(activeActivity.speaker) ? activeActivity.speaker.join(' y ') : activeActivity.speaker}
+                  className="w-full h-full object-cover object-top select-none"
+                />
+              </div>
+            )}
 
-            {/* Bastón azul #0660AE + Título con margen respecto al header superior (z-10 detrás del disertante z-20) */}
-            <div className="relative sm:absolute sm:left-[28.5%] sm:top-[84px] z-10 my-2 sm:my-0 -rotate-[3.45deg] origin-left">
+            {/* Bastón azul #0660AE + Título (z-10 detrás de las imágenes z-20 para generar el corte exacto de Figma) */}
+            <div className="relative sm:absolute sm:left-[30%] sm:top-[95px] z-10 my-2 sm:my-0 -rotate-[3.45deg] origin-left">
               <div className="relative inline-flex items-center">
                 <div
-                  className="absolute inset-y-0 right-0 -left-[120px] sm:-left-[150px] bg-[#0660AE] rounded-[30px] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] -z-10"
+                  className="absolute inset-y-0 right-0 -left-[140px] sm:-left-[180px] bg-[#0660AE] rounded-[30px] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] -z-10"
                   aria-hidden="true"
                 />
-                <span className="text-[#FFF5E3] text-2xl sm:text-[28px] xl:text-[32px] font-bold leading-none whitespace-nowrap py-2.5 pl-4 pr-7">
+                <span className="text-[#FFF5E3] text-2xl sm:text-[26px] xl:text-[32px] font-bold leading-none whitespace-nowrap py-2.5 pl-3 pr-7">
                   “{activeActivity.title}”
                 </span>
               </div>
             </div>
 
-            {/* A la DERECHA: en flujo normal para que la card crezca si el texto es largo y el botón nunca quede fuera */}
-            <div className="relative z-30 sm:pl-[29.5%] sm:pr-[42px] pt-3 sm:pt-[96px] sm:pb-[34px] flex-1 flex flex-col justify-between text-left">
+            {/* A la DERECHA: Textos, Disertante, Modalidad, Fecha/Hora/Lugar y Botón */}
+            <div className="relative z-30 sm:pl-[33%] sm:pr-[42px] pt-3 sm:pt-[122px] sm:pb-[34px] flex-1 flex flex-col justify-between text-left">
               <div className="space-y-3">
-                <p className="text-sm sm:text-[17px] font-medium text-[#193764] leading-snug max-w-[440px]">
+                <p className="text-sm sm:text-[17px] font-medium text-[#193764] leading-snug max-w-[449px]">
                   {activeActivity.subtitle}
                 </p>
 
-                <p className="text-xs sm:text-[16px] text-[#193764] font-light leading-snug max-w-[360px]">
+                <p className="text-xs sm:text-[16px] text-[#193764] font-light leading-snug max-w-[380px]">
                   {activeActivity.description}
                 </p>
               </div>
 
               {/* Fila inferior: Disertante/Modalidad a la izquierda, Fecha/Hora/Lugar/Botón a la derecha */}
-              <div className="pt-4 sm:pt-0 mt-auto flex flex-wrap items-end justify-between gap-4">
-                <div className="space-y-1.5">
+              <div className="pt-4 sm:pt-2 mt-auto flex flex-wrap items-end justify-between gap-4">
+                <div className="space-y-2">
                   <div>
                     <span className="block text-[15px] font-medium text-[#193764] leading-[22px]">Disertante:</span>
-                    <span className="font-bold text-xl sm:text-[24px] text-[#0660AE] leading-[28px] block">
-                      {activeActivity.speaker}
-                    </span>
+                    {Array.isArray(activeActivity.speaker) ? (
+                      activeActivity.speaker.map((name) => (
+                        <span key={name} className="font-bold text-xl sm:text-[24px] text-[#0660AE] leading-[28px] block">
+                          {name}
+                        </span>
+                      ))
+                    ) : (
+                      <span className="font-bold text-xl sm:text-[24px] text-[#0660AE] leading-[28px] block">
+                        {activeActivity.speaker}
+                      </span>
+                    )}
                   </div>
                   <div>
                     <span className="block text-[15px] font-medium text-[#193764] leading-[18px]">Modalidad:</span>

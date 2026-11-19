@@ -33,6 +33,7 @@ export const scheduleItems = [
     time: '09:00 - 10:30',
     startHour: 9,
     endHour: 10.5,
+    imageVariant: 'sofia',
   },
   {
     id: 'act-lun-2',
@@ -47,6 +48,7 @@ export const scheduleItems = [
     time: '11:00 - 13:00',
     startHour: 11,
     endHour: 13,
+    imageVariant: 'mentoras',
   },
   {
     id: 'act-lun-3',
@@ -61,6 +63,7 @@ export const scheduleItems = [
     time: '13:00 - 15:00',
     startHour: 13,
     endHour: 15,
+    imageVariant: 'puffs',
   },
   {
     id: 'act-lun-4',
@@ -75,6 +78,7 @@ export const scheduleItems = [
     time: '18:00 - 20:00',
     startHour: 18,
     endHour: 20,
+    imageVariant: 'sofia',
   },
 
   // Día 2 — Martes 2
@@ -91,6 +95,7 @@ export const scheduleItems = [
     time: '09:00 - 11:30',
     startHour: 9,
     endHour: 11.5,
+    imageVariant: 'mentoras',
   },
   {
     id: 'act-mar-2',
@@ -105,6 +110,7 @@ export const scheduleItems = [
     time: '12:00 - 14:00',
     startHour: 12,
     endHour: 14,
+    imageVariant: 'puffs',
   },
   {
     id: 'act-mar-3',
@@ -119,6 +125,7 @@ export const scheduleItems = [
     time: '14:00 - 16:30',
     startHour: 14,
     endHour: 16.5,
+    imageVariant: 'sofia',
   },
   {
     id: 'act-mar-4',
@@ -133,22 +140,27 @@ export const scheduleItems = [
     time: '17:00 - 20:00',
     startHour: 17,
     endHour: 20,
+    imageVariant: 'puffs',
   },
 
-  // Día 3 — Miércoles 3
+  // Día 3 — Miércoles 3 (Frame 157: Ideas que Cuentan)
   {
     id: 'act-mie-1',
     dayId: 'mie-03',
     title: 'Ideas que Cuentan',
-    subtitle: 'Competencia creativa intercarreras contra el ciberacoso.',
-    description: 'Actividad grupal donde las tres carreras proponen prototipos, campañas e ideas rápidas de apoyo directo.',
+    subtitle: 'Acompañanos a una jornada llena de ideas y buenos momentos por compartir.',
+    description: '“Ideatón” express: equipos mixtos de las tres carreras proponen soluciones rápidas contra el acoso.',
     category: 'grupal',
     categoryLabel: 'Actividad Grupal',
-    speaker: 'Mentoras invitadas de Innovación',
-    location: 'SUM FAU',
+    speaker: ['Lucía Cochia', 'Cintia Slobodiuk'],
+    modality: 'presencial',
+    location: 'Patio Arq FAU-UNNE',
     time: '09:00 - 12:30',
     startHour: 9,
     endHour: 12.5,
+    imageVariant: 'mentoras',
+    isStarred: true,
+    starredLabel: '¡Invitadas estrella!',
   },
   {
     id: 'act-mie-2',
@@ -163,6 +175,7 @@ export const scheduleItems = [
     time: '13:00 - 15:00',
     startHour: 13,
     endHour: 15,
+    imageVariant: 'sofia',
   },
   {
     id: 'act-mie-3',
@@ -177,6 +190,7 @@ export const scheduleItems = [
     time: '15:00 - 17:30',
     startHour: 15,
     endHour: 17.5,
+    imageVariant: 'puffs',
   },
   {
     id: 'act-mie-4',
@@ -191,9 +205,10 @@ export const scheduleItems = [
     time: '18:00 - 20:00',
     startHour: 18,
     endHour: 20,
+    imageVariant: 'mentoras',
   },
 
-  // Día 4 — Jueves 4
+  // Día 4 — Jueves 4 (Frame 147: Detrás del chiste, Frame 158: Entre Nos)
   {
     id: 'act-jue-1',
     dayId: 'jue-04',
@@ -203,12 +218,15 @@ export const scheduleItems = [
     category: 'charla',
     categoryLabel: 'Charla',
     speaker: 'Sofía Calvoe',
+    modality: 'híbrida',
     location: 'Auditorio FAU-UNNE',
     time: '09:00 - 11:30',
     startHour: 9,
     endHour: 11.5,
     image: '/assets/sofia-calvoe.png',
+    imageVariant: 'sofia',
     isStarred: true,
+    starredLabel: '¡Invitada estrella!',
   },
   {
     id: 'act-jue-2',
@@ -223,20 +241,25 @@ export const scheduleItems = [
     time: '12:00 - 14:30',
     startHour: 12,
     endHour: 14.5,
+    imageVariant: 'mentoras',
   },
   {
     id: 'act-jue-3',
     dayId: 'jue-04',
     title: 'Entre Nos',
-    subtitle: 'Conversatorio íntimo y espacio seguro para compartir vivencias.',
-    description: 'Encuentro grupal con dinámica circular y moderación psicológica para escucharse y recibir contención de pares.',
+    subtitle: 'Encuentro de puffs: conversatorio íntimo y espacio seguro para compartir vivencias sobre hostigamiento digital.',
+    description: 'Te invitamos a una charla con una psicóloga para hablar sobre qué es y cómo lidiar con el hostigamiento digital.',
     category: 'grupal',
     categoryLabel: 'Actividad Grupal',
-    speaker: 'Gabinete Interdisciplinario',
-    location: 'Espacio de Bienestar Estudiantil',
+    speaker: 'Soledad Alvarez',
+    modality: 'presencial',
+    location: 'Entrada FAU-UNNE',
     time: '15:00 - 17:00',
     startHour: 15,
     endHour: 17,
+    imageVariant: 'puffs',
+    isStarred: true,
+    starredLabel: '¡Invitada estrella!',
   },
   {
     id: 'act-jue-4',
@@ -251,6 +274,7 @@ export const scheduleItems = [
     time: '17:30 - 20:00',
     startHour: 17.5,
     endHour: 20,
+    imageVariant: 'sofia',
   },
 
   // Día 5 — Viernes 5
@@ -267,6 +291,7 @@ export const scheduleItems = [
     time: '09:00 - 11:30',
     startHour: 9,
     endHour: 11.5,
+    imageVariant: 'mentoras',
   },
   {
     id: 'act-vie-2',
@@ -281,6 +306,7 @@ export const scheduleItems = [
     time: '12:00 - 14:30',
     startHour: 12,
     endHour: 14.5,
+    imageVariant: 'puffs',
   },
   {
     id: 'act-vie-3',
@@ -295,6 +321,7 @@ export const scheduleItems = [
     time: '15:00 - 17:00',
     startHour: 15,
     endHour: 17,
+    imageVariant: 'sofia',
   },
   {
     id: 'act-vie-4',
@@ -309,5 +336,6 @@ export const scheduleItems = [
     time: '17:30 - 20:00',
     startHour: 17.5,
     endHour: 20,
+    imageVariant: 'mentoras',
   },
 ];
