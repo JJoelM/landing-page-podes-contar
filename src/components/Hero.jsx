@@ -9,7 +9,7 @@ export default function Hero({ onOpenInscription }) {
       <div className="absolute top-10 left-1/2 transform -translate-x-1/2 w-[600px] h-[600px] bg-orange-200/20 rounded-full blur-3xl pointer-events-none -z-10" />
 
       {/* Main Container - Centered Content */}
-      <div className="max-w-xl mx-auto px-4 sm:px-6 text-center relative z-10 space-y-7">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10 space-y-7">
         
         {/* Top Campaign Sub-brand con logo apaisado */}
         <div className="flex flex-col items-center justify-center select-none mb-1">
@@ -42,17 +42,22 @@ export default function Hero({ onOpenInscription }) {
           />
         </div>
 
-        {/* Título Principal Centrado con cursor/corchetes de concientización */}
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#193764] tracking-tight leading-[1.15] max-w-2xl mx-auto">
-          Jornada de{' '}
-          <HeadingHighlight
-            color="#193764"
-            bgColor="#FEEBC8"
-            textColor="text-[#193764]"
-          >
-            concientización
-          </HeadingHighlight>{' '}
-          sobre el Ciberacoso
+        {/* Título Principal Centrado en 3 líneas exactas */}
+        <h1 className="text-[26px] sm:text-5xl lg:text-6xl font-black text-[#193764] tracking-tight leading-[1.15] max-w-3xl mx-auto">
+          Jornada de
+          <br />
+          <span className="whitespace-nowrap">
+            <HeadingHighlight
+              color="#193764"
+              bgColor="#FEEBC8"
+              textColor="text-[#193764]"
+            >
+              concientización
+            </HeadingHighlight>{' '}
+            sobre
+          </span>
+          <br />
+          el Ciberacoso
         </h1>
 
         {/* Subtítulo Centrado */}
