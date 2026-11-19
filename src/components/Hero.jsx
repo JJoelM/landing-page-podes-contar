@@ -87,16 +87,16 @@ export default function Hero({ onOpenInscription }) {
 
       </div>
 
-      {/* Puffs en <xl (móvil, tablet y 1024px): en flujo normal debajo del texto, creciendo un 50% en lg (1024px) */}
-      <div className="xl:hidden mt-6 px-4 sm:px-10 flex items-end justify-center gap-4 sm:gap-10 pointer-events-none select-none">
-        <div className="w-[44%] lg:w-[46%] max-w-[260px] sm:max-w-[300px] lg:max-w-[460px]">
+      {/* Puffs en <xl (móvil, tablet y 1024px): en flujo normal debajo del texto, desplazados hacia los lados */}
+      <div className="xl:hidden mt-6 px-1 sm:px-3 flex items-end justify-between gap-4 sm:gap-8 pointer-events-none select-none">
+        <div className="w-[44%] lg:w-[46%] max-w-[260px] sm:max-w-[300px] lg:max-w-[460px] -ml-2 sm:ml-0">
           <img
             src="/assets/fausti-puff.png"
             alt="Fausti sentado en un puff naranja"
             className="w-full h-auto object-contain"
           />
         </div>
-        <div className="w-[44%] lg:w-[46%] max-w-[260px] sm:max-w-[300px] lg:max-w-[460px]">
+        <div className="w-[44%] lg:w-[46%] max-w-[260px] sm:max-w-[300px] lg:max-w-[460px] -mr-2 sm:mr-0">
           <img
             src="/assets/puff.png"
             alt="Puff naranja"
@@ -105,8 +105,8 @@ export default function Hero({ onOpenInscription }) {
         </div>
       </div>
 
-      {/* Fausti en puff a la IZQUIERDA en xl+ (50% más grande, escalando con la resolución) */}
-      <div className="hidden xl:block absolute left-2 2xl:left-8 bottom-0 z-0 pointer-events-none select-none">
+      {/* Fausti en puff a la IZQUIERDA en xl+ (~30px hacia la izquierda de forma responsive) */}
+      <div className="hidden xl:block absolute -left-5 2xl:left-0 bottom-0 z-0 pointer-events-none select-none">
         <div className="relative w-[clamp(440px,36vw,780px)]">
           <img
             src="/assets/fausti-puff.png"
@@ -116,8 +116,8 @@ export default function Hero({ onOpenInscription }) {
         </div>
       </div>
 
-      {/* Puff vacío a la DERECHA en xl+ (50% más grande, simétrico al izquierdo) */}
-      <div className="hidden xl:block absolute right-2 2xl:right-8 bottom-0 z-0 pointer-events-none select-none">
+      {/* Puff vacío a la DERECHA en xl+ (~30px hacia la derecha de forma responsive) */}
+      <div className="hidden xl:block absolute -right-5 2xl:right-0 bottom-0 z-0 pointer-events-none select-none">
         <div className="relative w-[clamp(440px,36vw,780px)]">
           <img
             src="/assets/puff.png"
